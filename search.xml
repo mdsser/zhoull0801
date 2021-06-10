@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>ARP</title>
+      <link href="/2021/06/10/ARP/"/>
+      <url>/2021/06/10/ARP/</url>
+      
+        <content type="html"><![CDATA[<p><strong>什么是ARP？ARP作用和使用场景</strong></p><hr><p><strong>一、什么是ARP</strong><br>ARP是地址转换协议（Address Resolution Protocol）的英文缩写，它是一个链路层协议，工作在OSI 模型的第二层，在本层和硬件接口间进行联系，同时对上层（网络层）提供服务。我们知道二层的以太网交换设备并不能识别32位的IP地址，它们是以48位以太网地址（就是我们常说的MAC地址）传输以太网数据包的。也就是说IP数据包在局域网内部传输时并不是靠IP地址而是靠MAC地址来识别目标的，因此IP地址与MAC地址之间就必须存在一种对应关系，而ARP协议就是用来确定这种对应关系的协议。<br>ARP是地址解析协议，用于根据目的IP地址来解析MAC地址，进行二层通讯。<br><strong>二、工作原理</strong><br>工作原理是通过广播发送ARP查询请求目的IP的MAC地址，与发送方处于同一广播域的主机收到该请求后，如果确认查询的IP是本机，则单播回应本机的MAC地址；如果发现查询的IP不是本机，则不回应；发送方接收到ARP回应后，把该IP和MAC地址写入本机ARP缓存表，下次再与该IP进行二层通讯，则直接使用表中的记录来进行转发。<br><strong>三、ARP的使用场景</strong><br>1、如果目的IP和本机IP属于同一网段，则ARP请求查询的就是目的IP的MAC地址<br>2、如果目的IP和本机IP不属于同一网段，当本机存在到达目的IP的路由时，则ARP请求查询的就是该路由下一跳的MAC地址；如果没有明细路由，就请求查询缺省路由下一跳（也就是网关）的MAC地址。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 以太网 </tag>
+            
+            <tag> 局域网 </tag>
+            
+            <tag> 网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux下的压缩与解压缩命令</title>
       <link href="/2021/06/07/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"/>
       <url>/2021/06/07/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</url>
@@ -29,6 +58,12 @@
       
         <content type="html"><![CDATA[<hr><p>一、基础命令</p><p>​    ls        //列出目录内容</p><p>​                d    //目录文件</p><p>​                b   //块设备文件（block）</p><p>​                c   //字符设备文件（character）</p><p>​                l   //符号链接文件（symbolic link file）                </p><p>​                p   //命令管道（pipe）</p><p>​                s   //套接字文件（socket）</p>]]></content>
       
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
       
       
         <tags>
@@ -102,17 +137,6 @@
     
     
     <entry>
-      <title>北极光</title>
-      <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
-      <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>gallery</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
@@ -127,6 +151,17 @@
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>北极光</title>
+      <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
+      <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
