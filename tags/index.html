@@ -378,19 +378,19 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/Linux/" title="Linux: 1">
+                <a href="/tags/Linux%E3%80%81%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E3%80%81%E8%BF%90%E7%BB%B4/" title="Linux、基础命令、运维: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Linux" style="background-color: #F9EBEA;">Linux
+                            data-tagname="Linux、基础命令、运维" style="background-color: #F9EBEA;">Linux、基础命令、运维
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Linux%E3%80%81%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E3%80%81%E8%BF%90%E7%BB%B4/" title="Linux、基础命令、运维: 1">
+                <a href="/tags/Linux/" title="Linux: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Linux、基础命令、运维" style="background-color: #F5EEF8;">Linux、基础命令、运维
+                            data-tagname="Linux" style="background-color: #F5EEF8;">Linux
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -419,7 +419,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"Linux","weight":1,"link":"/tags/Linux/"},{"text":"Linux、基础命令、运维","weight":1,"link":"/tags/Linux、基础命令、运维/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"Linux、基础命令、运维","weight":1,"link":"/tags/Linux、基础命令、运维/"},{"text":"Linux","weight":1,"link":"/tags/Linux/"}], {
         autoResize: true
     });
 </script>
@@ -501,6 +501,24 @@
 </footer>
 
 <div class="progress-bar"></div>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/06/2021 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
 
 
     <!-- 搜索遮罩框 -->
