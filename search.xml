@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>英语短语</title>
+      <link href="/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/"/>
+      <url>/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/</url>
+      
+        <content type="html"><![CDATA[<div align = "center">英语短语</div><hr><p>1、as far as                    至于,直到,远到</p><p>2、go on doing sth.      继续做同一件事    go on to do sth.       接下来做另一件事</p><p>3、take in吸收    take on承担    take up   拿起 take off        起飞,脱开,离开</p><p>4、might as well        不妨,倒不如,还是….的好</p><p>5、no sooner than    一……就……</p><p>6、make oneself at home    别拘束,随便,就当在家一样</p><p>7、make up     编造,化装</p><p>8、set aside     留出,不顾 set out 出发,开始 set up 建立,开业 set in  开始,到来</p><p>​      </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 英语 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 短语 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL索引</title>
       <link href="/2021/06/11/MySQL%E7%B4%A2%E5%BC%95/"/>
       <url>/2021/06/11/MySQL%E7%B4%A2%E5%BC%95/</url>
@@ -164,11 +189,11 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
       
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -178,28 +203,6 @@
       <title>about</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -219,9 +222,31 @@
     
     
     <entry>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
+      
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>北极光</title>
       <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
       <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
