@@ -85,7 +85,7 @@
       <link href="/2021/06/10/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/"/>
       <url>/2021/06/10/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</url>
       
-        <content type="html"><![CDATA[<h1 id="MySQL主从复制"><a href="#MySQL主从复制" class="headerlink" title="MySQL主从复制"></a>MySQL主从复制</h1><h3 id="1、MySQL主从复制概述"><a href="#1、MySQL主从复制概述" class="headerlink" title="1、MySQL主从复制概述"></a><strong>1、MySQL主从复制概述</strong></h3><blockquote><p>MySQL作为世界上使用最为广泛的数据库之一，免费是其原因之一；但不可忽略的是它本身的功能的确很强大。随着技术的发展，在实际的生产环境中，由单台MySQL数据库服务器不能满足实际的需求。此时数据库集群就很好的解决了这个问题了。采用MySQL分布式集群，能够搭建一个高并发、负载均衡的集群服务器。在此之前我们必须要保证每台MySQL服务器里的数据同步。</p></blockquote><h4 id="1-1-MySQL主从复制概念"><a href="#1-1-MySQL主从复制概念" class="headerlink" title="1.1 MySQL主从复制概念"></a><strong>1.1 MySQL主从复制概念</strong></h4><blockquote><p>​       MySQL 主从复制是指数据可以从一个MySQL数据库服务器主节点复制到一个或多个从节。MySQL 默认采用异步复制方式，这样从节点不用一直访问主服务器来更新自己的数据，数据的更新可以在远程连接上进行，从节点可以复制主数据库中的所有数据库或者特定的数据库，或者特定的表。</p></blockquote><h4 id="1-2-MySQL主从复制原理"><a href="#1-2-MySQL主从复制原理" class="headerlink" title="1.2  MySQL主从复制原理"></a><strong>1.2  MySQL主从复制原理</strong></h4><blockquote><p>​        MySQL服务器之间的主从同步是基于二进制日志机制，主服务器使用二进制日志来记录数据库的变动情况，从服务器通过读取和执行该日志文件来保持和主服务器的数据一致。</p><p>​        MySQL主从复制涉及到三个线程，一个运行在主节点（log dump thread），其余两个（I/Othread，SQL thread）运行在从节点，如下图所示：</p></blockquote><p><strong>主从复制架构图：</strong></p><p><img src="https://pic1.zhimg.com/v2-1b0c3f31bd398c39b9e0930059b0ca24_b.jpg" alt="img"></p><blockquote><p>主节点 binary log dump 线程</p></blockquote><p>当从节点连接主节点时，主节点会创建一个log dump 线程，用于发送bin-log的内容。在读取bin-log中的操作时，此线程会对主节点上的bin-log加锁，当读取完成，甚至在发动给从节点之前，锁会被释放。</p><blockquote><p>从节点I/O线程</p></blockquote><p>当从节点上执行<code>start slave</code>命令之后，从节点会创建一个I/O线程用来连接主节点，请求主库中更新的bin-log。I/O线程接收到主节点binlog dump 进程发来的更新之后，保存在本地relay-log中。</p><blockquote><p>从节点SQL线程</p></blockquote><p>SQL线程负责读取relay log中的内容，解析成具体的操作并执行，最终保证主从数据的一致性。</p><p>对于每一个主从连接，都需要三个进程来完成。当主节点有多个从节点时，主节点会为每一个当前连接的从节点建一个binary log dump 进程，而每个从节点都有自己的I/O进程，SQL进程。从节点用两个线程将从主库拉取更新和执行分成独立的任务，这样在执行同步数据任务的时候，不会降低读操作的性能。比如，如果从节点没有运行，此时I/O进程可以很快从主节点获取更新，尽管SQL进程还没有执行。如果在SQL进程执行之前从节点服务停止，至少I/O进程已经从主节点拉取到了最新的变更并且保存在本地relay日志中，当服务再次起来之后，就可以完成数据的同步。</p><p>要实施复制，首先必须打开Master 端的binary log（bin-log）功能，否则无法实现。<br>因为整个复制过程实际上就是Slave 从Master 端获取该日志然后再在自己身上完全顺序的执行日志中所记录的各种操作。如下图所示：</p><p><img src="https://pic4.zhimg.com/v2-17a1d089c3266a59b5d00d7bd055bed7_b.jpg" alt="img"></p><h3 id="2、-主从复制的分类"><a href="#2、-主从复制的分类" class="headerlink" title="2、 主从复制的分类"></a><strong>2、 主从复制的分类</strong></h3><p>MySQL主从复制按照binlog的三种日志格式进行划分：</p><h4 id="1-1基于SQL语句的复制-statement-based-replication-SBR-："><a href="#1-1基于SQL语句的复制-statement-based-replication-SBR-：" class="headerlink" title="1.1基于SQL语句的复制(statement-based replication, SBR)："></a><strong>1.1基于SQL语句的复制(statement-based replication, SBR)：</strong></h4><p>优点：</p><ul><li>历史悠久，技术成熟。</li><li>产生的binlog文件较小，比较节省空间。</li><li>binlog中包含了所有数据库更改信息，可以据此来审核数据库的安全等情况；binlog可以用于实时的还原，而不仅仅用于复制。</li><li>主从版本可以不一样，从服务器版本可以比主服务器版本高。</li></ul><p>缺点：</p><ul><li>不是所有的UPDATE语句都能被复制，尤其是包含不确定操作的时候。</li><li>调用具有不确定因素的 UDF（用户自定义函数）时复制也可能出问题。</li><li>INSERT … SELECT会产生更多的行级锁</li><li>使用以下函数的语句也无法被复制：<ul><li>LOAD_FILE()</li><li>UUID()</li><li>USER()</li><li>FOUND_ROWS()</li><li>SYSDATE() (除非启动时启用了 –sysdate-is-now 选项)</li></ul></li></ul><h4 id="2-2基于行的复制-row-based-replication-RBR-："><a href="#2-2基于行的复制-row-based-replication-RBR-：" class="headerlink" title="2.2基于行的复制(row-based replication, RBR)："></a><strong>2.2基于行的复制(row-based replication, RBR)：</strong></h4><p>优点：</p><ul><li>任何情况都可以被复制，这对复制来说是最安全可靠的。</li><li>多数情况下，从服务器上的表如果有主键的话，复制就会快了很多。</li><li>从服务器上采用多线程来执行复制成为可能。</li><li>执行 INSERT，UPDATE，DELETE 语句时锁更少。</li><li>复制以下几种语句时的行锁更少：<ul><li>INSERT … SELECT</li><li>包含 AUTO_INCREMENT 字段的 INSERT</li><li>没有附带条件或者并没有修改很多记录的 UPDATE 或 DELETE 语句</li></ul></li></ul><p>缺点：</p><ul><li>binlog 文件太大</li><li>复杂的回滚时 binlog 中会包含大量的数据</li><li>主服务器上执行 UPDATE 语句时，所有发生变化的记录都会写到 binlog 中，而 SBR 只会写一次，这会导致频繁发生 binlog 的并发写问题</li><li>UDF 产生的大 BLOB值（较大的二进制对象）会导致复制变慢</li><li>无法从 binlog 中看到都复制了写什么语句，无法进行审计。</li></ul><p>3、混合模式复制(mixed-based replication, MBR)：是上面两种方式的折中。</p><p>以上三种模式对应binlog的三种格式：STATEMENT，ROW，MIXED。</p><h3 id="3、-主从复制的方式"><a href="#3、-主从复制的方式" class="headerlink" title="3、 主从复制的方式"></a><strong>3、 主从复制的方式</strong></h3><p><strong>异步复制：</strong>（默认的复制策略是此方式）</p><p>​        主服务器执行Commit提交事务操作并写入BINLOG日志后即可成功返回客户端，无需等待BINLOG日志传送给从服务器，这样主服务器和从服务器的数据之间难免会存在一定的延迟。</p><p><img src="https://pic1.zhimg.com/v2-c15bfffe3e398eafc7e0ffdaeebfcaac_b.jpg" alt="img"></p><p><strong>半同步复制：</strong></p><p>​        主服务器处理事务过程中，提交完事务后，必须等至少一个从服务器将收到的binlog写入relay log并返回ack确认消息才能继续执行处理用户的事务。</p><p><img src="https://pic2.zhimg.com/v2-d9ac9c5493d1d772f5bf57ede089f0d5_b.jpg" alt="img"></p><p>半同步模式不是mysql内置的，从mysql 5.5开始集成，需要master 和slave 安装插件开启半同步模式。</p><p><strong>增强半同步复制：</strong></p><p>为了保证主服务器上的每一个BINLOG事务都能够被可靠地复制到从服务器上，主服务器写数据后并不提交事务而是先将操作写入到BINLOG，然后等待至少一个从服务器接收到BINLOG事务并成功写入中继日志后，主服务器才返回Commit操作成功给客户端。</p><h3 id="5、-MySQL主从复制的好处"><a href="#5、-MySQL主从复制的好处" class="headerlink" title="5、 MySQL主从复制的好处"></a><strong>5、 MySQL主从复制的好处</strong></h3><ul><li>实时备份，提高数据安全性，同时用于故障切换，避免影响业务。</li><li>读写分离（mysql-proxy），将读请求交给从服务器，实现负载分担。</li><li>数据库性能提高，通过增加从数据库组建集群，提高总性能。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="MySQL主从复制"><a href="#MySQL主从复制" class="headerlink" title="MySQL主从复制"></a>MySQL主从复制</h1><h3 id="1、MySQL主从复制概述"><a href="#1、MySQL主从复制概述" class="headerlink" title="1、MySQL主从复制概述"></a><strong>1、MySQL主从复制概述</strong></h3><blockquote><p>MySQL作为世界上使用最为广泛的数据库之一，免费是其原因之一；但不可忽略的是它本身的功能的确很强大。随着技术的发展，在实际的生产环境中，由单台MySQL数据库服务器不能满足实际的需求。此时数据库集群就很好的解决了这个问题了。采用MySQL分布式集群，能够搭建一个高并发、负载均衡的集群服务器。在此之前我们必须要保证每台MySQL服务器里的数据同步。</p></blockquote><h4 id="1-1-MySQL主从复制概念"><a href="#1-1-MySQL主从复制概念" class="headerlink" title="1.1 MySQL主从复制概念"></a><strong>1.1 MySQL主从复制概念</strong></h4><blockquote><p>​       MySQL 主从复制是指数据可以从一个MySQL数据库服务器主节点复制到一个或多个从节。MySQL 默认采用异步复制方式，这样从节点不用一直访问主服务器来更新自己的数据，数据的更新可以在远程连接上进行，从节点可以复制主数据库中的所有数据库或者特定的数据库，或者特定的表。</p></blockquote><h4 id="1-2-MySQL主从复制原理"><a href="#1-2-MySQL主从复制原理" class="headerlink" title="1.2  MySQL主从复制原理"></a><strong>1.2  MySQL主从复制原理</strong></h4><blockquote><p>​        MySQL服务器之间的主从同步是基于二进制日志机制，主服务器使用二进制日志来记录数据库的变动情况，从服务器通过读取和执行该日志文件来保持和主服务器的数据一致。</p><p>​        MySQL主从复制涉及到三个线程，一个运行在主节点（log dump thread），其余两个（I/Othread，SQL thread）运行在从节点，如下图所示：</p></blockquote><p><strong>主从复制架构图：</strong></p><p><img src="https://pic1.zhimg.com/v2-1b0c3f31bd398c39b9e0930059b0ca24_b.jpg" alt="img"></p><blockquote><p>主节点 binary log dump 线程</p></blockquote><p>当从节点连接主节点时，主节点会创建一个log dump 线程，用于发送bin-log的内容。在读取bin-log中的操作时，此线程会对主节点上的bin-log加锁，当读取完成，甚至在发动给从节点之前，锁会被释放。</p><blockquote><p>从节点I/O线程</p></blockquote><p>当从节点上执行<code>start slave</code>命令之后，从节点会创建一个I/O线程用来连接主节点，请求主库中更新的bin-log。I/O线程接收到主节点binlog dump 进程发来的更新之后，保存在本地relay-log中。</p><blockquote><p>从节点SQL线程</p></blockquote><p>SQL线程负责读取relay log中的内容，解析成具体的操作并执行，最终保证主从数据的一致性。</p><p>对于每一个主从连接，都需要三个进程来完成。当主节点有多个从节点时，主节点会为每一个当前连接的从节点建一个binary log dump 进程，而每个从节点都有自己的I/O进程，SQL进程。从节点用两个线程将从主库拉取更新和执行分成独立的任务，这样在执行同步数据任务的时候，不会降低读操作的性能。比如，如果从节点没有运行，此时I/O进程可以很快从主节点获取更新，尽管SQL进程还没有执行。如果在SQL进程执行之前从节点服务停止，至少I/O进程已经从主节点拉取到了最新的变更并且保存在本地relay日志中，当服务再次起来之后，就可以完成数据的同步。</p><p>要实施复制，首先必须打开Master 端的binary log（bin-log）功能，否则无法实现。<br>因为整个复制过程实际上就是Slave 从Master 端获取该日志然后再在自己身上完全顺序的执行日志中所记录的各种操作。如下图所示：</p><p><img src="https://pic4.zhimg.com/v2-17a1d089c3266a59b5d00d7bd055bed7_b.jpg" alt="img"></p><h3 id="2、-主从复制的分类"><a href="#2、-主从复制的分类" class="headerlink" title="2、 主从复制的分类"></a><strong>2、 主从复制的分类</strong></h3><p>MySQL主从复制按照binlog的三种日志格式进行划分：</p><h4 id="1-1基于SQL语句的复制-statement-based-replication-SBR-："><a href="#1-1基于SQL语句的复制-statement-based-replication-SBR-：" class="headerlink" title="1.1基于SQL语句的复制(statement-based replication, SBR)："></a><strong>1.1基于SQL语句的复制(statement-based replication, SBR)：</strong></h4><p>优点：</p><ul><li>历史悠久，技术成熟。</li><li>产生的binlog文件较小，比较节省空间。</li><li>binlog中包含了所有数据库更改信息，可以据此来审核数据库的安全等情况；binlog可以用于实时的还原，而不仅仅用于复制。</li><li>主从版本可以不一样，从服务器版本可以比主服务器版本高。</li></ul><p>缺点：</p><ul><li>不是所有的UPDATE语句都能被复制，尤其是包含不确定操作的时候。</li><li>调用具有不确定因素的 UDF（用户自定义函数）时复制也可能出问题。</li><li>INSERT … SELECT会产生更多的行级锁</li><li>使用以下函数的语句也无法被复制：<ul><li>LOAD_FILE()</li><li>UUID()</li><li>USER()</li><li>FOUND_ROWS()</li><li>SYSDATE() (除非启动时启用了 –sysdate-is-now 选项)</li></ul></li></ul><h4 id="2-2基于行的复制-row-based-replication-RBR-："><a href="#2-2基于行的复制-row-based-replication-RBR-：" class="headerlink" title="2.2基于行的复制(row-based replication, RBR)："></a><strong>2.2基于行的复制(row-based replication, RBR)：</strong></h4><p>优点：</p><ul><li>任何情况都可以被复制，这对复制来说是最安全可靠的。</li><li>多数情况下，从服务器上的表如果有主键的话，复制就会快了很多。</li><li>从服务器上采用多线程来执行复制成为可能。</li><li>执行 INSERT，UPDATE，DELETE 语句时锁更少。</li><li>复制以下几种语句时的行锁更少：<ul><li>INSERT … SELECT</li><li>包含 AUTO_INCREMENT 字段的 INSERT</li><li>没有附带条件或者并没有修改很多记录的 UPDATE 或 DELETE 语句</li></ul></li></ul><p>缺点：</p><ul><li>binlog 文件太大</li><li>复杂的回滚时 binlog 中会包含大量的数据</li><li>主服务器上执行 UPDATE 语句时，所有发生变化的记录都会写到 binlog 中，而 SBR 只会写一次，这会导致频繁发生 binlog 的并发写问题</li><li>UDF 产生的大 BLOB值（较大的二进制对象）会导致复制变慢</li><li>无法从 binlog 中看到都复制了写什么语句，无法进行审计。</li></ul><p>3、混合模式复制(mixed-based replication, MBR)：是上面两种方式的折中。</p><p>以上三种模式对应binlog的三种格式：STATEMENT，ROW，MIXED。</p><h3 id="3、-主从复制的方式"><a href="#3、-主从复制的方式" class="headerlink" title="3、 主从复制的方式"></a><strong>3、 主从复制的方式</strong></h3><p><strong>异步复制：</strong>（默认的复制策略是此方式）</p><p>​        主服务器执行Commit提交事务操作并写入BINLOG日志后即可成功返回客户端，无需等待BINLOG日志传送给从服务器，这样主服务器和从服务器的数据之间难免会存在一定的延迟。</p><p><img src="https://pic1.zhimg.com/v2-c15bfffe3e398eafc7e0ffdaeebfcaac_b.jpg" alt="img"></p><p><strong>半同步复制：</strong></p><p>​        主服务器处理事务过程中，提交完事务后，必须等至少一个从服务器将收到的binlog写入relay log并返回ack确认消息才能继续执行处理用户的事务。</p><p><img src="https://pic2.zhimg.com/v2-d9ac9c5493d1d772f5bf57ede089f0d5_b.jpg" alt="img"></p><p>半同步模式不是mysql内置的，从mysql 5.5开始集成，需要master 和slave 安装插件开启半同步模式。</p><p><strong>增强半同步复制：</strong></p><p>为了保证主服务器上的每一个BINLOG事务都能够被可靠地复制到从服务器上，主服务器写数据后并不提交事务而是先将操作写入到BINLOG，然后等待至少一个从服务器接收到BINLOG事务并成功写入中继日志后，主服务器才返回Commit操作成功给客户端。</p><h3 id="4、-MySQL主从复制的好处"><a href="#4、-MySQL主从复制的好处" class="headerlink" title="4、 MySQL主从复制的好处"></a><strong>4、 MySQL主从复制的好处</strong></h3><ul><li>实时备份，提高数据安全性，同时用于故障切换，避免影响业务。</li><li>读写分离（mysql-proxy），将读请求交给从服务器，实现负载分担。</li><li>数据库性能提高，通过增加从数据库组建集群，提高总性能。</li></ul>]]></content>
       
       
       <categories>
@@ -178,31 +178,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>about</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -244,9 +222,31 @@
     
     
     <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>北极光</title>
       <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
       <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-13
+                    2021-06-14
                 </div>
                 
 
@@ -582,7 +582,7 @@
 <p>半同步模式不是mysql内置的，从mysql 5.5开始集成，需要master 和slave 安装插件开启半同步模式。</p>
 <p><strong>增强半同步复制：</strong></p>
 <p>为了保证主服务器上的每一个BINLOG事务都能够被可靠地复制到从服务器上，主服务器写数据后并不提交事务而是先将操作写入到BINLOG，然后等待至少一个从服务器接收到BINLOG事务并成功写入中继日志后，主服务器才返回Commit操作成功给客户端。</p>
-<h3 id="5、-MySQL主从复制的好处"><a href="#5、-MySQL主从复制的好处" class="headerlink" title="5、 MySQL主从复制的好处"></a><strong>5、 MySQL主从复制的好处</strong></h3><ul>
+<h3 id="4、-MySQL主从复制的好处"><a href="#4、-MySQL主从复制的好处" class="headerlink" title="4、 MySQL主从复制的好处"></a><strong>4、 MySQL主从复制的好处</strong></h3><ul>
 <li>实时备份，提高数据安全性，同时用于故障切换，避免影响业务。</li>
 <li>读写分离（mysql-proxy），将读请求交给从服务器，实现负载分担。</li>
 <li>数据库性能提高，通过增加从数据库组建集群，提高总性能。</li>
