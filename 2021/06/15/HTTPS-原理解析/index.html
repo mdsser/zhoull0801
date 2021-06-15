@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="英语短语, C语言、Linux基础命令、Hexo、github、虚拟化">
+    <meta name="keywords" content="HTTPS 原理解析, C语言、Linux基础命令、Hexo、github、虚拟化">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>英语短语 | 周乐的博客</title>
+    <title>HTTPS 原理解析 | 周乐的博客</title>
     <link rel="icon" type="image/jpeg" href="/%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">英语短语</h1>
+                    <h1 class="description center-align post-title">HTTPS 原理解析</h1>
                 </div>
             </div>
         </div>
@@ -441,8 +441,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%9F%AD%E8%AF%AD/">
-                                <span class="chip bg-color">短语</span>
+                            <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">网络</span>
                             </a>
                         
                     </div>
@@ -453,8 +453,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
-                                英语
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
+                                网络基础
                             </a>
                         
                     </div>
@@ -466,21 +466,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-13
+                    2021-06-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-13
+                    2021-06-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    127
+                    487
                 </div>
                 
 
@@ -497,18 +497,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div align = "center">英语短语</div>
-
-<hr>
-<p>1、as far as                    至于,直到,远到</p>
-<p>2、go on doing sth.      继续做同一件事    go on to do sth.       接下来做另一件事</p>
-<p>3、take in吸收    take on承担    take up   拿起 take off        起飞,脱开,离开</p>
-<p>4、might as well        不妨,倒不如,还是….的好</p>
-<p>5、no sooner than    一……就……</p>
-<p>6、make oneself at home    别拘束,随便,就当在家一样</p>
-<p>7、make up     编造,化装</p>
-<p>8、set aside     留出,不顾 set out 出发,开始 set up 建立,开业 set in  开始,到来</p>
-<p>​      </p>
+                <p>HTTPS是在HTTP和TCP之间建立了一个安全层，HTTP与TCP通信的时候，必须先经过一个安全层，对数据包进行加密，然后将加密后的数据包传送给TCP，相应的TCP必&lt;须将数据包进行解密，才能传送给上面的HTTP。</p>
+<h3 id="一、基本概念及理解"><a href="#一、基本概念及理解" class="headerlink" title="一、基本概念及理解"></a><strong>一、基本概念及理解</strong></h3><p><font color='green'>TLS/SSL的功能实现主要依赖于三类基本算法</font></p>
+<p>散列函数 、对称加密和非对称加密，其利用非对称加密实现身份认证和密钥协商，对称加密算法采用协商的密钥对数据加密，基于散列函数验证信息的完整性。</p>
+<p>非对称加密是实现身份认证和密钥协商；</p>
+<p>对称加密是对信息进行加密；</p>
+<p><img src="C:\Users\86132\AppData\Roaming\Typora\typora-user-images\image-20210615094338143.png" alt="image-20210615094338143"></p>
+<p><font color='green'>SSL和TLS的区别？</font></p>
+<p>SSL和TLS都是加密协议，有网络请求的地方就可以使用这两种协议在传输层进行加密，确保数据传输的安全，**<code>SSL是TLS的前身</code>**，网景在1995年发布了直接发布了SSL 2.0版本，1.0版本没有对外发布。由于漏洞的原因，版本2.0也只是昙花一现，网景在1996年就发布了SSL3.0。随后在1999年的时候，基于SSL3.0版本，网景发布了TLS1.0版本(虽然TLS1.0在SSL3.0基础上的改动不太大，但是这些改动都是非常重要的)。</p>
+<p>**<code>我们现在应该使用TLS协议</code>**，因为在2011年和2015年的时候SSL2.0和SSL3.0就已经分别被弃用了，而且由于漏洞的缘故，如果你的服务器配置了SSL的协议，还得手动将他们禁用掉。所以我们只给服务器配置TLS协议就好了，有的服务对TLS版本有要求，你可以在SSL Server Test查看服务器的证书及协议等配置。</p>
+<p>SSL Server Test：</p>
+<p><a target="_blank" rel="noopener" href="https://globalsign.ssllabs.com/">https://globalsign.ssllabs.com/</a></p>
+<p>现在TLS主流版本是1.2。</p>
 
                 
             </div>
@@ -535,7 +535,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhoull0801.top/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/">http://zhoull0801.top/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/</a>
+                    <a href="http://zhoull0801.top/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/">http://zhoull0801.top/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -573,8 +573,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%9F%AD%E8%AF%AD/">
-                                    <span class="chip bg-color">短语</span>
+                                <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">网络</span>
                                 </a>
                             
                         </div>
@@ -746,9 +746,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/">
                     <div class="card-image">
@@ -766,9 +767,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -781,6 +782,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -799,13 +801,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/11/MySQL%E7%B4%A2%E5%BC%95/">
+                <a href="/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="MySQL索引">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="英语短语">
                         
-                        <span class="card-title">MySQL索引</span>
+                        <span class="card-title">英语短语</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -816,14 +818,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/MySQL/" class="post-category">
-                                    MySQL
+                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
+                                    英语
                                 </a>
                             
                             
@@ -833,8 +835,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/%E7%9F%AD%E8%AF%AD/">
+                        <span class="chip bg-color">短语</span>
                     </a>
                     
                 </div>

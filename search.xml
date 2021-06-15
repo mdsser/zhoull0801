@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HTTPS 原理解析</title>
+      <link href="/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/"/>
+      <url>/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<p>HTTPS是在HTTP和TCP之间建立了一个安全层，HTTP与TCP通信的时候，必须先经过一个安全层，对数据包进行加密，然后将加密后的数据包传送给TCP，相应的TCP必&lt;须将数据包进行解密，才能传送给上面的HTTP。</p><h3 id="一、基本概念及理解"><a href="#一、基本概念及理解" class="headerlink" title="一、基本概念及理解"></a><strong>一、基本概念及理解</strong></h3><p><font color='green'>TLS/SSL的功能实现主要依赖于三类基本算法</font></p><p>散列函数 、对称加密和非对称加密，其利用非对称加密实现身份认证和密钥协商，对称加密算法采用协商的密钥对数据加密，基于散列函数验证信息的完整性。</p><p>非对称加密是实现身份认证和密钥协商；</p><p>对称加密是对信息进行加密；</p><p><img src="C:\Users\86132\AppData\Roaming\Typora\typora-user-images\image-20210615094338143.png" alt="image-20210615094338143"></p><p><font color='green'>SSL和TLS的区别？</font></p><p>SSL和TLS都是加密协议，有网络请求的地方就可以使用这两种协议在传输层进行加密，确保数据传输的安全，**<code>SSL是TLS的前身</code>**，网景在1995年发布了直接发布了SSL 2.0版本，1.0版本没有对外发布。由于漏洞的原因，版本2.0也只是昙花一现，网景在1996年就发布了SSL3.0。随后在1999年的时候，基于SSL3.0版本，网景发布了TLS1.0版本(虽然TLS1.0在SSL3.0基础上的改动不太大，但是这些改动都是非常重要的)。</p><p>**<code>我们现在应该使用TLS协议</code>**，因为在2011年和2015年的时候SSL2.0和SSL3.0就已经分别被弃用了，而且由于漏洞的缘故，如果你的服务器配置了SSL的协议，还得手动将他们禁用掉。所以我们只给服务器配置TLS协议就好了，有的服务对TLS版本有要求，你可以在SSL Server Test查看服务器的证书及协议等配置。</p><p>SSL Server Test：</p><p><a href="https://globalsign.ssllabs.com/">https://globalsign.ssllabs.com/</a></p><p>现在TLS主流版本是1.2。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>英语短语</title>
       <link href="/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/"/>
       <url>/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/</url>
@@ -54,33 +79,6 @@
     
     
     <entry>
-      <title>Linux下的压缩与解压缩命令</title>
-      <link href="/2021/06/10/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"/>
-      <url>/2021/06/10/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</url>
-      
-        <content type="html"><![CDATA[<hr><hr><p><strong>gzip命令</strong></p><p>gzip命令用来压缩文件。gzip是个使用广泛的压缩程序，文件经它压缩过后，其名称后面会多处“.gz”扩展名。</p><p>gzip是在Linux系统中经常使用的一个对文件进行压缩和解压缩的命令，既方便又好用。gzip不仅可以用来压缩大的、较少使用的文件以节省磁盘空间，还可以和tar命令一起构成Linux操作系统中比较流行的压缩文件格式。据统计，gzip命令对文本文件有60%～70%的压缩率。减少文件大小有两个明显的好处，一是可以减少存储空间，二是通过网络传输文件时，可以减少传输的时间。</p><p><strong>选项：</strong></p><p>-a：使用ASCII文字模式；</p><p>-d：解开压缩文件；</p><p>-f：强行压缩文件。不理会文件名称或硬连接是否存在以及该文件是否为符号连接；</p><p>-h：在线帮助；</p><p>-l：列出压缩文件的相关信息；</p><p>-L：显示版本与版权信息；</p><p>-n：压缩文件时，不保存原来的文件名称及时间戳记；</p><p>-N：压缩文件时，保存原来的文件名称及时间戳记；</p><p>-q：不显示警告信息；</p><p>-r：递归处理，将指定目录下的所有文件及子目录一并处理；</p><p>-S或&lt;压缩字尾字符串&gt;或—-suffix&lt;压缩字尾字符串&gt;：更改压缩字尾字符串；</p><p>-t：测试压缩文件是否正确无误；</p><p>-v：显示指令执行过程；</p><p>-V：显示版本信息；</p><p>-&lt;压缩效率&gt;：压缩效率是一个介于1~9的数值，预设值为“6”，指定愈大的数值，压缩效率就会愈高；</p><p>–best：此参数的效果和指定“-9”参数相同；</p><p>–fast：此参数的效果和指定“-1”参数相同。</p><hr><p>实例</p><p>\1. 把test6目录下的每个文件压缩成.gz文件</p><p>gzip *</p><p>\2. 把上例中每个压缩的文件解压，并列出详细的信息</p><p>gzip -dv *</p><p>\3. 详细显示例1中每个压缩的文件的信息，并不解压</p><p>gzip -l *</p><p>4.压缩一个tar备份文件，此时压缩文件的扩展名为.tar.gz</p><p>gzip -r log.tar</p><p>\5. 递归的压缩目录</p><p>gzip -rv test6</p><p>这样，所有test下面的文件都变成了*.gz，目录依然存在只是目录里面的文件相应变成了*.gz.这就是压缩，和打包不同。因为是对目录操作，所以需要加上-r选项，这样也可以对子目录进行递归了。</p><p>\6. 递归地解压目录</p><p>gzip -dr test6</p><hr><p><strong>gunzip命令</strong></p><p>gunzip命令用来解压缩文件。gunzip是个使用广泛的解压缩程序，它用于解开被<a href="http://man.linuxde.net/gzip">gzip</a>压缩过的文件，这些压缩文件预设最后的扩展名为.gz。事实上gunzip就是gzip的硬连接，因此不论是压缩或解压缩，都可通过gzip指令单独完成。</p><p><strong>选项：</strong></p><p>-a：使用ASCII文字模式；</p><p>-c：把解压后的文件输出到标准输出设备；</p><p>-f：强行解开压缩文件，不理会文件名称或硬连接是否存在以及该文件是否为符号连接；</p><p>-h：在线帮助；</p><p>-l：列出压缩文件的相关信息；</p><p>-L：显示版本与版权信息；</p><p>-n：解压缩时，若压缩文件内含有原来的文件名称及时间戳记，则将其忽略不予处理；</p><p>-N：解压缩时，若压缩文件内含有原来的文件名称及时间戳记，则将其回存到解开的文件上；</p><p>-q：不显示警告信息；</p><p>-r：递归处理，将指定目录下的所有文件及子目录一并处理；</p><p>-S或&lt;压缩字尾字符串&gt;或—-suffix&lt;压缩字尾字符串&gt;：更改压缩字尾字符串；</p><p>-t：测试压缩文件是否正确无误；</p><p>-v：显示指令执行过程；</p><p>-V：显示版本信息；</p><hr><p>实例</p><p>\1. 首先将/etc目录下的所有文件以及子目录进行压缩，备份压缩包etc.<a href="http://man.linuxde.net/zip">zip</a>到/opt目录，然后对etc.zip文件进行gzip压缩，设置gzip的压缩级别为9。</p><p>zip –r /opt/etc.zip /etc</p><p>gzip -9v /opt/etc.zip</p><p>\2. 查看上述etc.zip.gz文件的压缩信息。</p><p>gzip -l /opt/etc.zip.gz</p><p>compressed    uncompressed ratio uncompressed_name</p><p>11938745      12767265  6.5% /opt/etc.zip</p><p>\3. 解压上述etc.zip.gz文件到当前目录。</p><p>[root@mylinux ~]#gzip –d /opt/etc.zip.gz</p><p>或者执行</p><p>[root@mylinux ~]#gunzip /opt/etc.zip.gz</p><p>通过上面的示例可以知道gzip –d等价于gunzip命令。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Linux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-            <tag> 基础命令 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>MySQL主从复制</title>
       <link href="/2021/06/10/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/"/>
       <url>/2021/06/10/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</url>
@@ -100,6 +98,33 @@
             <tag> MySQL </tag>
             
             <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux下的压缩与解压缩命令</title>
+      <link href="/2021/06/10/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"/>
+      <url>/2021/06/10/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<hr><hr><p><strong>gzip命令</strong></p><p>gzip命令用来压缩文件。gzip是个使用广泛的压缩程序，文件经它压缩过后，其名称后面会多处“.gz”扩展名。</p><p>gzip是在Linux系统中经常使用的一个对文件进行压缩和解压缩的命令，既方便又好用。gzip不仅可以用来压缩大的、较少使用的文件以节省磁盘空间，还可以和tar命令一起构成Linux操作系统中比较流行的压缩文件格式。据统计，gzip命令对文本文件有60%～70%的压缩率。减少文件大小有两个明显的好处，一是可以减少存储空间，二是通过网络传输文件时，可以减少传输的时间。</p><p><strong>选项：</strong></p><p>-a：使用ASCII文字模式；</p><p>-d：解开压缩文件；</p><p>-f：强行压缩文件。不理会文件名称或硬连接是否存在以及该文件是否为符号连接；</p><p>-h：在线帮助；</p><p>-l：列出压缩文件的相关信息；</p><p>-L：显示版本与版权信息；</p><p>-n：压缩文件时，不保存原来的文件名称及时间戳记；</p><p>-N：压缩文件时，保存原来的文件名称及时间戳记；</p><p>-q：不显示警告信息；</p><p>-r：递归处理，将指定目录下的所有文件及子目录一并处理；</p><p>-S或&lt;压缩字尾字符串&gt;或—-suffix&lt;压缩字尾字符串&gt;：更改压缩字尾字符串；</p><p>-t：测试压缩文件是否正确无误；</p><p>-v：显示指令执行过程；</p><p>-V：显示版本信息；</p><p>-&lt;压缩效率&gt;：压缩效率是一个介于1~9的数值，预设值为“6”，指定愈大的数值，压缩效率就会愈高；</p><p>–best：此参数的效果和指定“-9”参数相同；</p><p>–fast：此参数的效果和指定“-1”参数相同。</p><hr><p>实例</p><p>\1. 把test6目录下的每个文件压缩成.gz文件</p><p>gzip *</p><p>\2. 把上例中每个压缩的文件解压，并列出详细的信息</p><p>gzip -dv *</p><p>\3. 详细显示例1中每个压缩的文件的信息，并不解压</p><p>gzip -l *</p><p>4.压缩一个tar备份文件，此时压缩文件的扩展名为.tar.gz</p><p>gzip -r log.tar</p><p>\5. 递归的压缩目录</p><p>gzip -rv test6</p><p>这样，所有test下面的文件都变成了*.gz，目录依然存在只是目录里面的文件相应变成了*.gz.这就是压缩，和打包不同。因为是对目录操作，所以需要加上-r选项，这样也可以对子目录进行递归了。</p><p>\6. 递归地解压目录</p><p>gzip -dr test6</p><hr><p><strong>gunzip命令</strong></p><p>gunzip命令用来解压缩文件。gunzip是个使用广泛的解压缩程序，它用于解开被<a href="http://man.linuxde.net/gzip">gzip</a>压缩过的文件，这些压缩文件预设最后的扩展名为.gz。事实上gunzip就是gzip的硬连接，因此不论是压缩或解压缩，都可通过gzip指令单独完成。</p><p><strong>选项：</strong></p><p>-a：使用ASCII文字模式；</p><p>-c：把解压后的文件输出到标准输出设备；</p><p>-f：强行解开压缩文件，不理会文件名称或硬连接是否存在以及该文件是否为符号连接；</p><p>-h：在线帮助；</p><p>-l：列出压缩文件的相关信息；</p><p>-L：显示版本与版权信息；</p><p>-n：解压缩时，若压缩文件内含有原来的文件名称及时间戳记，则将其忽略不予处理；</p><p>-N：解压缩时，若压缩文件内含有原来的文件名称及时间戳记，则将其回存到解开的文件上；</p><p>-q：不显示警告信息；</p><p>-r：递归处理，将指定目录下的所有文件及子目录一并处理；</p><p>-S或&lt;压缩字尾字符串&gt;或—-suffix&lt;压缩字尾字符串&gt;：更改压缩字尾字符串；</p><p>-t：测试压缩文件是否正确无误；</p><p>-v：显示指令执行过程；</p><p>-V：显示版本信息；</p><hr><p>实例</p><p>\1. 首先将/etc目录下的所有文件以及子目录进行压缩，备份压缩包etc.<a href="http://man.linuxde.net/zip">zip</a>到/opt目录，然后对etc.zip文件进行gzip压缩，设置gzip的压缩级别为9。</p><p>zip –r /opt/etc.zip /etc</p><p>gzip -9v /opt/etc.zip</p><p>\2. 查看上述etc.zip.gz文件的压缩信息。</p><p>gzip -l /opt/etc.zip.gz</p><p>compressed    uncompressed ratio uncompressed_name</p><p>11938745      12767265  6.5% /opt/etc.zip</p><p>\3. 解压上述etc.zip.gz文件到当前目录。</p><p>[root@mylinux ~]#gzip –d /opt/etc.zip.gz</p><p>或者执行</p><p>[root@mylinux ~]#gunzip /opt/etc.zip.gz</p><p>通过上面的示例可以知道gzip –d等价于gunzip命令。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> 基础命令 </tag>
             
         </tags>
       
@@ -178,9 +203,9 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -189,20 +214,9 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
-      
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -222,6 +236,17 @@
     
     
     <entry>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -233,20 +258,20 @@
     
     
     <entry>
-      <title>北极光</title>
-      <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
-      <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>北极光</title>
+      <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
+      <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
