@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Shell脚本100例(上)</title>
+      <link href="/2021/06/15/SHELL%E8%84%9A%E6%9C%AC100%E4%BE%8B-%E4%B8%8A/"/>
+      <url>/2021/06/15/SHELL%E8%84%9A%E6%9C%AC100%E4%BE%8B-%E4%B8%8A/</url>
+      
+        <content type="html"><![CDATA[<h4 id="1、编写hello-world脚本"><a href="#1、编写hello-world脚本" class="headerlink" title="1、编写hello world脚本"></a><strong>1、编写hello world脚本</strong></h4><blockquote><p>#! /bin/bash</p><p>echo “hello world”</p></blockquote><h4 id="2、通过位置变量创建Linux系统账户及密码"><a href="#2、通过位置变量创建Linux系统账户及密码" class="headerlink" title="2、通过位置变量创建Linux系统账户及密码"></a><strong>2、通过位置变量创建Linux系统账户及密码</strong></h4><blockquote><p>#! /bin/bash</p><p>#$1 是执行脚本的第一个参数，$2是执行脚本的第二个参数</p><p>useradd “$1”</p><p>echo “$2” | passwd –stdin “$2”</p></blockquote><h4 id="3、每周5使用tar命令备份-var-log下的所有日志文件"><a href="#3、每周5使用tar命令备份-var-log下的所有日志文件" class="headerlink" title="3、每周5使用tar命令备份/var/log下的所有日志文件"></a><strong>3、每周5使用tar命令备份/var/log下的所有日志文件</strong></h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> Shell脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTTPS 原理解析</title>
       <link href="/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/"/>
       <url>/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</url>
@@ -203,9 +228,31 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -225,31 +272,9 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
-      
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -269,11 +294,11 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
       
     </entry>
     
