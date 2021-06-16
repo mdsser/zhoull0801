@@ -473,14 +473,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-15
+                    2021-06-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    82
+                    290
                 </div>
                 
 
@@ -507,7 +507,25 @@
 <p>useradd “$1”</p>
 <p>echo “$2” | passwd –stdin “$2”</p>
 </blockquote>
-<h4 id="3、每周5使用tar命令备份-var-log下的所有日志文件"><a href="#3、每周5使用tar命令备份-var-log下的所有日志文件" class="headerlink" title="3、每周5使用tar命令备份/var/log下的所有日志文件"></a><strong>3、每周5使用tar命令备份/var/log下的所有日志文件</strong></h4>
+<h4 id="3、每周5使用tar命令备份-var-log下的所有日志文件"><a href="#3、每周5使用tar命令备份-var-log下的所有日志文件" class="headerlink" title="3、每周5使用tar命令备份/var/log下的所有日志文件"></a><strong>3、每周5使用tar命令备份/var/log下的所有日志文件</strong></h4><blockquote>
+<p>#! /bin/bash</p>
+<p>#编写备份脚本，备份后的文件名包括日期标签，防止后面的备份将前面的备份数据覆盖</p>
+<p>#注意date命令需要使用反引号括起来，反引号在键盘<tab>键上面 </p>
+<p>tar  -czf  log-<code>date +%Y%m%d</code>.tar.gz  /var/log</p>
+<p>#crontab -e                        #编写计划任务，执行备份脚本</p>
+<p>00 03 * * 5     /root/logbak.sh</p>
+</blockquote>
+<h4 id="4、一键部署LNMP（RPM包版本）"><a href="#4、一键部署LNMP（RPM包版本）" class="headerlink" title="4、一键部署LNMP（RPM包版本）"></a><strong>4、一键部署LNMP（RPM包版本）</strong></h4><blockquote>
+<p>#! /bin/bash</p>
+<p>#使用yum安装部署LNMP，需要提前配置好yum源，否则该脚本会失败</p>
+<p>#本脚本使用于centos7.2或RHEL7.2 </p>
+<p>yum -y install httpd</p>
+<p>yum -y install mariadb mariadb-devel mariadb-server</p>
+<p>yum -y install php*</p>
+<p>systemctl start httpd mariadb </p>
+<p>systemctl enable httpd mariadb</p>
+</blockquote>
+<h4 id="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"><a href="#5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员" class="headerlink" title="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"></a><strong>5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员</strong></h4>
                 
             </div>
             <hr/>
@@ -985,7 +1003,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">4.8k</span>
+                        class="white-color">5k</span>
             
             
             
