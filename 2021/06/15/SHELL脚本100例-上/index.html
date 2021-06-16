@@ -480,7 +480,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    290
+                    565
                 </div>
                 
 
@@ -525,7 +525,43 @@
 <p>systemctl start httpd mariadb </p>
 <p>systemctl enable httpd mariadb</p>
 </blockquote>
-<h4 id="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"><a href="#5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员" class="headerlink" title="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"></a><strong>5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员</strong></h4>
+<h4 id="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"><a href="#5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员" class="headerlink" title="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"></a><strong>5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员</strong></h4><blockquote>
+<p>#! /bin/bash</p>
+<p>#提取根分区剩余空间</p>
+<p>disk_size=$(df / |awk ‘///{print $4}’)</p>
+<p>#提取内存剩余空间</p>
+<p>men_size=$(free |awk ‘/Mem/{print $4}’)</p>
+<p>while :</p>
+<p>do</p>
+<p>#注意内存和磁盘提取的空间大小都是以kb为单位</p>
+<p>if [ $disk_size -le 512000 -a $men_size -le 1024000 ];then mail -s Warning root &lt;&lt;EOF</p>
+<p>Insufficient resources, 资源不足</p>
+<p>EOF</p>
+<p>fi</p>
+<p>done</p>
+</blockquote>
+<h4 id="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"><a href="#6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。" class="headerlink" title="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"></a><strong>6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。</strong></h4><blockquote>
+<p>#! /bin/bash</p>
+<p>#RANDOWw为系统自带的系统变量，值为0-32767的随机数</p>
+<p>#使用取余算法将随机数变为1-100的随机数</p>
+<p>num=$[RANDOW%100+1]</p>
+<p>#使用read提示用户猜数字</p>
+<p>#使用if判断用户猜数字的大小关系：-eq(等于)，-ne(不等于)，-gt(大鱼)，-ge(大于等于)，-lt(小于)，-le(小于或等于)</p>
+<p>while :</p>
+<p>do</p>
+<p>​         read ‐p  “计算机生成了一个1‐100的随机数，你猜: “  a</p>
+<p>​         if   [  $a  ‐eq   $num  ];then</p>
+<pre><code>                  echo   &quot;恭喜，猜对了&quot; 
+</code></pre>
+<p>​                      exit</p>
+<p>​         elif  [  $a   ‐gt   $num  ];then </p>
+<p>​                      echo   “Oops,猜大了” </p>
+<p>​        else</p>
+<p>​                      echo   “Oops,猜小了”</p>
+<p>​         fi</p>
+<p>done</p>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -1003,7 +1039,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5k</span>
+                        class="white-color">5.3k</span>
             
             
             
