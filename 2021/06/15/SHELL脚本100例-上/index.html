@@ -480,7 +480,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    565
+                    562
                 </div>
                 
 
@@ -542,24 +542,12 @@
 </blockquote>
 <h4 id="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"><a href="#6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。" class="headerlink" title="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"></a><strong>6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。</strong></h4><blockquote>
 <p>#! /bin/bash</p>
-<p>#RANDOWw为系统自带的系统变量，值为0-32767的随机数</p>
+<p>#RANDOM为系统自带的系统变量，值为0-32767的随机数</p>
 <p>#使用取余算法将随机数变为1-100的随机数</p>
-<p>num=$[RANDOW%100+1]</p>
+<p>num=$[RANDOM%100+1]</p>
 <p>#使用read提示用户猜数字</p>
 <p>#使用if判断用户猜数字的大小关系：-eq(等于)，-ne(不等于)，-gt(大鱼)，-ge(大于等于)，-lt(小于)，-le(小于或等于)</p>
-<p>while :</p>
-<p>do</p>
-<p>​         read ‐p  “计算机生成了一个1‐100的随机数，你猜: “  a</p>
-<p>​         if   [  $a  ‐eq   $num  ];then</p>
-<pre><code>                  echo   &quot;恭喜，猜对了&quot; 
-</code></pre>
-<p>​                      exit</p>
-<p>​         elif  [  $a   ‐gt   $num  ];then </p>
-<p>​                      echo   “Oops,猜大了” </p>
-<p>​        else</p>
-<p>​                      echo   “Oops,猜小了”</p>
-<p>​         fi</p>
-<p>done</p>
+<p>while :<br>do<br>        read -p “计算机生成了一个1-100的随机数，你猜:” a<br>        if [  $a  -eq  $num  ];then<br>                echo   “恭喜，猜对了”<br>                exit<br>        elif [  $a  -gt  $num  ];then<br>                echo  “Oops,猜大了”<br>        else<br>                echo  “Oops,猜小了”<br>        fi<br>done</p>
 </blockquote>
 
                 
