@@ -228,9 +228,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -239,9 +239,9 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -272,6 +272,17 @@
     
     
     <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
@@ -286,17 +297,6 @@
       <title>北极光</title>
       <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
       <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
