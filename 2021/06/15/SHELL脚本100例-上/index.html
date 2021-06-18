@@ -480,7 +480,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    716
+                    1.3k
                 </div>
                 
 
@@ -549,8 +549,7 @@
 <p>#使用if判断用户猜数字的大小关系：-eq(等于)，-ne(不等于)，-gt(大鱼)，-ge(大于等于)，-lt(小于)，-le(小于或等于)</p>
 <p>while :<br>do<br>        read -p “计算机生成了一个1-100的随机数，你猜:” a<br>        if [  $a  -eq  $num  ];then<br>                echo   “恭喜，猜对了”<br>                exit<br>        elif [  $a  -gt  $num  ];then<br>                echo  “Oops,猜大了”<br>        else<br>                echo  “Oops,猜小了”<br>        fi<br>done</p>
 </blockquote>
-<p>7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）</p>
-<blockquote>
+<h4 id="7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）"><a href="#7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）" class="headerlink" title="7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）"></a><strong>7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）</strong></h4><blockquote>
 <p>#! /bin/bash</p>
 <p>if [     $USER    ==   “root”    ];then</p>
 <p>​               yum  -y  install   vsftpd</p>
@@ -558,14 +557,20 @@
 <p>​                echo  “您不是管理员，没有权限安装软件”</p>
 <p>fi</p>
 </blockquote>
-<p>8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）</p>
-<blockquote>
+<h4 id="8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）"><a href="#8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）" class="headerlink" title="8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）"></a><strong>8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）</strong></h4><blockquote>
 <p>#! /bin/bash</p>
 <p>if [     $UID    -eq    0    ];then</p>
 <p>​               yum  -y  install   vsftpd</p>
 <p>else</p>
 <p>​                echo  “您不是管理员，没有权限安装软件”</p>
 <p>fi</p>
+</blockquote>
+<h4 id="9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。"><a href="#9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。" class="headerlink" title="9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。"></a><strong>9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。</strong></h4><blockquote>
+<p>#! /bin/bash<br>read -p   “请输入用户名：”  user<br>#使用-z可以判断一个变量是否为空，如果为空，提示用户必须输入账号名，并退出脚本，退出码为2<br>#没有输入用户名脚本退出后，使用$?查看的返回码为2<br>if  [   -z    $user   ];then<br>        echo “您不需输入账户名”<br>        exit 2<br>fi<br>#使用stty -echo 关闭shell的回显功能<br>#使用stty echo 打开shell的回显功能<br>stty -echo<br>read -p   “请输入密码：”    pass<br>stty echo<br>pass=${pass:-123456}<br>useradd    “$user”<br>echo  “$pass”   | passwd   –stdin  “$user”</p>
+</blockquote>
+<p>10、依次提示用户输入3个整数，脚本根据数字大小依次排序输出3个数字</p>
+<blockquote>
+<p>#! /bin/bash<br>read -p “请输入一个整数:” num1<br>read -p “请输入一个整数:” num2<br>read -p “请输入一个整数:” num3<br>#不管谁大谁小，最后都打印echo “$num1,$num2,$num3”<br>#num1中永远存最小的值，num2中永远存中间值，num3永远存最大值<br>#如果输入的不是这样的顺序，则改变数的存储顺序，如：可以将num1和num2的值对调<br>tmp=0<br>#如果num1大于num2，就把num1和num2的值对调，确保num1变量中存的是最小值<br>if [  $num1  -gt  $num2 ];then<br>        tmp=$num1<br>        num1=$num2<br>        num2=$tmp<br> cat number.sh<br>#! /bin/bash<br>read -p “请输入一个整数:” num1<br>read -p “请输入一个整数:” num2<br>read -p “请输入一个整数:” num3<br>#不管谁大谁小，最后都打印echo “$num1,$num2,$num3”<br>#num1中永远存最小的值，num2中永远存中间值，num3永远存最大值<br>#如果输入的不是这样的顺序，则改变数的存储顺序，如：可以将num1和num2的值对调<br>tmp=0<br>#如果num1大于num2，就把num1和num2的值对调，确保num1变量中存的是最小值<br>if [  $num1  -gt  $num2 ];then<br>        tmp=$num1<br>        num1=$num2<br>        num2=$tmp<br>fi<br>#如果num1大于num3，就把num1和num3对调，确保num1变量中存的是最小值<br>if [ $num1   -gt  $num3 ];then<br>      tmp=$num1<br>      num1=$num3<br>      num3=$tmp<br>fi<br>#如果num2大于num3，就把num2和num3对标，确保num2变量中存的是小一点的值<br>if [ $num2   -gt  $num3 ];then<br>        tmp=$num2<br>        num2=$num3<br>        num3=$tmp<br>fi<br>echo “排序后数据为:$num1,$num2,$num3”</p>
 </blockquote>
 
                 
@@ -1043,7 +1048,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.7k</span>
+                        class="white-color">6.3k</span>
             
             
             

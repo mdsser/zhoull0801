@@ -33,7 +33,7 @@
       <link href="/2021/06/15/SHELL%E8%84%9A%E6%9C%AC100%E4%BE%8B-%E4%B8%8A/"/>
       <url>/2021/06/15/SHELL%E8%84%9A%E6%9C%AC100%E4%BE%8B-%E4%B8%8A/</url>
       
-        <content type="html"><![CDATA[<h4 id="1、编写hello-world脚本"><a href="#1、编写hello-world脚本" class="headerlink" title="1、编写hello world脚本"></a><strong>1、编写hello world脚本</strong></h4><blockquote><p>#! /bin/bash</p><p>echo “hello world”</p></blockquote><h4 id="2、通过位置变量创建Linux系统账户及密码"><a href="#2、通过位置变量创建Linux系统账户及密码" class="headerlink" title="2、通过位置变量创建Linux系统账户及密码"></a><strong>2、通过位置变量创建Linux系统账户及密码</strong></h4><blockquote><p>#! /bin/bash</p><p>#$1 是执行脚本的第一个参数，$2是执行脚本的第二个参数</p><p>useradd “$1”</p><p>echo “$2” | passwd –stdin “$2”</p></blockquote><h4 id="3、每周5使用tar命令备份-var-log下的所有日志文件"><a href="#3、每周5使用tar命令备份-var-log下的所有日志文件" class="headerlink" title="3、每周5使用tar命令备份/var/log下的所有日志文件"></a><strong>3、每周5使用tar命令备份/var/log下的所有日志文件</strong></h4><blockquote><p>#! /bin/bash</p><p>#编写备份脚本，备份后的文件名包括日期标签，防止后面的备份将前面的备份数据覆盖</p><p>#注意date命令需要使用反引号括起来，反引号在键盘<tab>键上面 </p><p>tar  -czf  log-<code>date +%Y%m%d</code>.tar.gz  /var/log</p><p>#crontab -e                        #编写计划任务，执行备份脚本</p><p>00 03 * * 5     /root/logbak.sh</p></blockquote><h4 id="4、一键部署LNMP（RPM包版本）"><a href="#4、一键部署LNMP（RPM包版本）" class="headerlink" title="4、一键部署LNMP（RPM包版本）"></a><strong>4、一键部署LNMP（RPM包版本）</strong></h4><blockquote><p>#! /bin/bash</p><p>#使用yum安装部署LNMP，需要提前配置好yum源，否则该脚本会失败</p><p>#本脚本使用于centos7.2或RHEL7.2 </p><p>yum -y install httpd</p><p>yum -y install mariadb mariadb-devel mariadb-server</p><p>yum -y install php*</p><p>systemctl start httpd mariadb </p><p>systemctl enable httpd mariadb</p></blockquote><h4 id="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"><a href="#5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员" class="headerlink" title="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"></a><strong>5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员</strong></h4><blockquote><p>#! /bin/bash</p><p>#提取根分区剩余空间</p><p>disk_size=$(df / |awk ‘///{print $4}’)</p><p>#提取内存剩余空间</p><p>men_size=$(free |awk ‘/Mem/{print $4}’)</p><p>while :</p><p>do</p><p>#注意内存和磁盘提取的空间大小都是以kb为单位</p><p>if [ $disk_size -le 512000 -a $men_size -le 1024000 ];then mail -s Warning root &lt;&lt;EOF</p><p>Insufficient resources, 资源不足</p><p>EOF</p><p>fi</p><p>done</p></blockquote><h4 id="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"><a href="#6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。" class="headerlink" title="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"></a><strong>6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。</strong></h4><blockquote><p>#! /bin/bash</p><p>#RANDOM为系统自带的系统变量，值为0-32767的随机数</p><p>#使用取余算法将随机数变为1-100的随机数</p><p>num=$[RANDOM%100+1]</p><p>#使用read提示用户猜数字</p><p>#使用if判断用户猜数字的大小关系：-eq(等于)，-ne(不等于)，-gt(大鱼)，-ge(大于等于)，-lt(小于)，-le(小于或等于)</p><p>while :<br>do<br>        read -p “计算机生成了一个1-100的随机数，你猜:” a<br>        if [  $a  -eq  $num  ];then<br>                echo   “恭喜，猜对了”<br>                exit<br>        elif [  $a  -gt  $num  ];then<br>                echo  “Oops,猜大了”<br>        else<br>                echo  “Oops,猜小了”<br>        fi<br>done</p></blockquote><p>7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）</p><blockquote><p>#! /bin/bash</p><p>if [     $USER    ==   “root”    ];then</p><p>​               yum  -y  install   vsftpd</p><p>else</p><p>​                echo  “您不是管理员，没有权限安装软件”</p><p>fi</p></blockquote><p>8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）</p><blockquote><p>#! /bin/bash</p><p>if [     $UID    -eq    0    ];then</p><p>​               yum  -y  install   vsftpd</p><p>else</p><p>​                echo  “您不是管理员，没有权限安装软件”</p><p>fi</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h4 id="1、编写hello-world脚本"><a href="#1、编写hello-world脚本" class="headerlink" title="1、编写hello world脚本"></a><strong>1、编写hello world脚本</strong></h4><blockquote><p>#! /bin/bash</p><p>echo “hello world”</p></blockquote><h4 id="2、通过位置变量创建Linux系统账户及密码"><a href="#2、通过位置变量创建Linux系统账户及密码" class="headerlink" title="2、通过位置变量创建Linux系统账户及密码"></a><strong>2、通过位置变量创建Linux系统账户及密码</strong></h4><blockquote><p>#! /bin/bash</p><p>#$1 是执行脚本的第一个参数，$2是执行脚本的第二个参数</p><p>useradd “$1”</p><p>echo “$2” | passwd –stdin “$2”</p></blockquote><h4 id="3、每周5使用tar命令备份-var-log下的所有日志文件"><a href="#3、每周5使用tar命令备份-var-log下的所有日志文件" class="headerlink" title="3、每周5使用tar命令备份/var/log下的所有日志文件"></a><strong>3、每周5使用tar命令备份/var/log下的所有日志文件</strong></h4><blockquote><p>#! /bin/bash</p><p>#编写备份脚本，备份后的文件名包括日期标签，防止后面的备份将前面的备份数据覆盖</p><p>#注意date命令需要使用反引号括起来，反引号在键盘<tab>键上面 </p><p>tar  -czf  log-<code>date +%Y%m%d</code>.tar.gz  /var/log</p><p>#crontab -e                        #编写计划任务，执行备份脚本</p><p>00 03 * * 5     /root/logbak.sh</p></blockquote><h4 id="4、一键部署LNMP（RPM包版本）"><a href="#4、一键部署LNMP（RPM包版本）" class="headerlink" title="4、一键部署LNMP（RPM包版本）"></a><strong>4、一键部署LNMP（RPM包版本）</strong></h4><blockquote><p>#! /bin/bash</p><p>#使用yum安装部署LNMP，需要提前配置好yum源，否则该脚本会失败</p><p>#本脚本使用于centos7.2或RHEL7.2 </p><p>yum -y install httpd</p><p>yum -y install mariadb mariadb-devel mariadb-server</p><p>yum -y install php*</p><p>systemctl start httpd mariadb </p><p>systemctl enable httpd mariadb</p></blockquote><h4 id="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"><a href="#5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员" class="headerlink" title="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"></a><strong>5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员</strong></h4><blockquote><p>#! /bin/bash</p><p>#提取根分区剩余空间</p><p>disk_size=$(df / |awk ‘///{print $4}’)</p><p>#提取内存剩余空间</p><p>men_size=$(free |awk ‘/Mem/{print $4}’)</p><p>while :</p><p>do</p><p>#注意内存和磁盘提取的空间大小都是以kb为单位</p><p>if [ $disk_size -le 512000 -a $men_size -le 1024000 ];then mail -s Warning root &lt;&lt;EOF</p><p>Insufficient resources, 资源不足</p><p>EOF</p><p>fi</p><p>done</p></blockquote><h4 id="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"><a href="#6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。" class="headerlink" title="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"></a><strong>6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。</strong></h4><blockquote><p>#! /bin/bash</p><p>#RANDOM为系统自带的系统变量，值为0-32767的随机数</p><p>#使用取余算法将随机数变为1-100的随机数</p><p>num=$[RANDOM%100+1]</p><p>#使用read提示用户猜数字</p><p>#使用if判断用户猜数字的大小关系：-eq(等于)，-ne(不等于)，-gt(大鱼)，-ge(大于等于)，-lt(小于)，-le(小于或等于)</p><p>while :<br>do<br>        read -p “计算机生成了一个1-100的随机数，你猜:” a<br>        if [  $a  -eq  $num  ];then<br>                echo   “恭喜，猜对了”<br>                exit<br>        elif [  $a  -gt  $num  ];then<br>                echo  “Oops,猜大了”<br>        else<br>                echo  “Oops,猜小了”<br>        fi<br>done</p></blockquote><h4 id="7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）"><a href="#7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）" class="headerlink" title="7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）"></a><strong>7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）</strong></h4><blockquote><p>#! /bin/bash</p><p>if [     $USER    ==   “root”    ];then</p><p>​               yum  -y  install   vsftpd</p><p>else</p><p>​                echo  “您不是管理员，没有权限安装软件”</p><p>fi</p></blockquote><h4 id="8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）"><a href="#8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）" class="headerlink" title="8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）"></a><strong>8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）</strong></h4><blockquote><p>#! /bin/bash</p><p>if [     $UID    -eq    0    ];then</p><p>​               yum  -y  install   vsftpd</p><p>else</p><p>​                echo  “您不是管理员，没有权限安装软件”</p><p>fi</p></blockquote><h4 id="9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。"><a href="#9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。" class="headerlink" title="9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。"></a><strong>9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。</strong></h4><blockquote><p>#! /bin/bash<br>read -p   “请输入用户名：”  user<br>#使用-z可以判断一个变量是否为空，如果为空，提示用户必须输入账号名，并退出脚本，退出码为2<br>#没有输入用户名脚本退出后，使用$?查看的返回码为2<br>if  [   -z    $user   ];then<br>        echo “您不需输入账户名”<br>        exit 2<br>fi<br>#使用stty -echo 关闭shell的回显功能<br>#使用stty echo 打开shell的回显功能<br>stty -echo<br>read -p   “请输入密码：”    pass<br>stty echo<br>pass=${pass:-123456}<br>useradd    “$user”<br>echo  “$pass”   | passwd   –stdin  “$user”</p></blockquote><p>10、依次提示用户输入3个整数，脚本根据数字大小依次排序输出3个数字</p><blockquote><p>#! /bin/bash<br>read -p “请输入一个整数:” num1<br>read -p “请输入一个整数:” num2<br>read -p “请输入一个整数:” num3<br>#不管谁大谁小，最后都打印echo “$num1,$num2,$num3”<br>#num1中永远存最小的值，num2中永远存中间值，num3永远存最大值<br>#如果输入的不是这样的顺序，则改变数的存储顺序，如：可以将num1和num2的值对调<br>tmp=0<br>#如果num1大于num2，就把num1和num2的值对调，确保num1变量中存的是最小值<br>if [  $num1  -gt  $num2 ];then<br>        tmp=$num1<br>        num1=$num2<br>        num2=$tmp<br> cat number.sh<br>#! /bin/bash<br>read -p “请输入一个整数:” num1<br>read -p “请输入一个整数:” num2<br>read -p “请输入一个整数:” num3<br>#不管谁大谁小，最后都打印echo “$num1,$num2,$num3”<br>#num1中永远存最小的值，num2中永远存中间值，num3永远存最大值<br>#如果输入的不是这样的顺序，则改变数的存储顺序，如：可以将num1和num2的值对调<br>tmp=0<br>#如果num1大于num2，就把num1和num2的值对调，确保num1变量中存的是最小值<br>if [  $num1  -gt  $num2 ];then<br>        tmp=$num1<br>        num1=$num2<br>        num2=$tmp<br>fi<br>#如果num1大于num3，就把num1和num3对调，确保num1变量中存的是最小值<br>if [ $num1   -gt  $num3 ];then<br>      tmp=$num1<br>      num1=$num3<br>      num3=$tmp<br>fi<br>#如果num2大于num3，就把num2和num3对标，确保num2变量中存的是小一点的值<br>if [ $num2   -gt  $num3 ];then<br>        tmp=$num2<br>        num2=$num3<br>        num3=$tmp<br>fi<br>echo “排序后数据为:$num1,$num2,$num3”</p></blockquote>]]></content>
       
       
       <categories>
@@ -253,9 +253,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -275,22 +275,11 @@
     
     
     <entry>
-      <title>北极光</title>
-      <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
-      <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
       
     </entry>
     
@@ -308,11 +297,11 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -322,6 +311,17 @@
       <title>gallery</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>北极光</title>
+      <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
+      <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
