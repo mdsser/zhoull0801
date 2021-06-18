@@ -473,14 +473,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-16
+                    2021-06-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    562
+                    716
                 </div>
                 
 
@@ -548,6 +548,24 @@
 <p>#使用read提示用户猜数字</p>
 <p>#使用if判断用户猜数字的大小关系：-eq(等于)，-ne(不等于)，-gt(大鱼)，-ge(大于等于)，-lt(小于)，-le(小于或等于)</p>
 <p>while :<br>do<br>        read -p “计算机生成了一个1-100的随机数，你猜:” a<br>        if [  $a  -eq  $num  ];then<br>                echo   “恭喜，猜对了”<br>                exit<br>        elif [  $a  -gt  $num  ];then<br>                echo  “Oops,猜大了”<br>        else<br>                echo  “Oops,猜小了”<br>        fi<br>done</p>
+</blockquote>
+<p>7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）</p>
+<blockquote>
+<p>#! /bin/bash</p>
+<p>if [     $USER    ==   “root”    ];then</p>
+<p>​               yum  -y  install   vsftpd</p>
+<p>else</p>
+<p>​                echo  “您不是管理员，没有权限安装软件”</p>
+<p>fi</p>
+</blockquote>
+<p>8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）</p>
+<blockquote>
+<p>#! /bin/bash</p>
+<p>if [     $UID    -eq    0    ];then</p>
+<p>​               yum  -y  install   vsftpd</p>
+<p>else</p>
+<p>​                echo  “您不是管理员，没有权限安装软件”</p>
+<p>fi</p>
 </blockquote>
 
                 
@@ -1025,7 +1043,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.5k</span>
+                        class="white-color">5.7k</span>
             
             
             
