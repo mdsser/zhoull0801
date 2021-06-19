@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>LAMP架构介绍</title>
+      <link href="/2021/06/19/LAMP%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/"/>
+      <url>/2021/06/19/LAMP%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/</url>
+      
+        <content type="html"><![CDATA[<h1 id="LAMP架构介绍"><a href="#LAMP架构介绍" class="headerlink" title="LAMP架构介绍"></a>LAMP架构介绍</h1><h3 id="LAMP动态网站架构"><a href="#LAMP动态网站架构" class="headerlink" title="LAMP动态网站架构"></a><strong>LAMP动态网站架构</strong></h3><p>LAMP是指一组通常一起使用来运行动态网站或者服务器的自由软件名称首字母缩写。</p><h3 id="1、LAMP分别代表什么？"><a href="#1、LAMP分别代表什么？" class="headerlink" title="1、LAMP分别代表什么？"></a><strong>1、LAMP分别代表什么？</strong></h3><ul><li><p>L代表服务器操作系统使用Linux</p></li><li><p>A代表网站服务使用的是Apache软件基金会中的httpd软件</p></li><li><p>M代表网站后台使用的数据库是MySQL数据库</p></li><li><p>P代表网站是使用PHP/Perl/Python等语言开发</p></li></ul><p><img src="https://www.hanzz.red/upload/2020/2/image-ecec342c09ec4bb38835a50c27144903.png" alt="img"></p><h3 id="2、Apache-MySQL-PHP各自有什么作用？"><a href="#2、Apache-MySQL-PHP各自有什么作用？" class="headerlink" title="2、Apache/MySQL/PHP各自有什么作用？"></a><strong>2、Apache/MySQL/PHP各自有什么作用？</strong></h3><h4 id="2-1-Apache（httpd）-—–像极了饭店前台"><a href="#2-1-Apache（httpd）-—–像极了饭店前台" class="headerlink" title="2.1 Apache（httpd） —–像极了饭店前台"></a><strong>2.1 Apache（httpd） —–像极了饭店前台</strong></h4><p>作用：提供web服务，接受用户的连接请求！</p><p>注意：Apache或Nginx都只支持静态页面的解析</p><p><img src="https://pic2.zhimg.com/v2-6772dee5c3e0f1946221fb90f39c43dd_b.jpg" alt="img"></p><p>当客户端请求的是静态资源时，web服务（httpd程序）会直接返回静态资源给客户端</p><p><strong>①静态网页</strong></p><ul><li>静态网页指使用HTML（超文本标记语言）编写，一般后缀为.htm，.html等；网页文件中没有程序代码。</li><li>静态页面，用户双击打开，看到的效果与web服务器是相同的，因为网页的内容在用户访问之前就已经确定。</li></ul><p><strong>②动态网页</strong></p><ul><li>动态网页指网站使用特定的编程语言编写，网页文件中除了HTML标记以外，还包括一些实现特定功能的程序代码。</li><li>服务端可以根据客户端的不同请求动态产生网页内容。</li><li>动态网页后缀一般为.php .asp .aspx .cgi .perl .jsp等</li><li>常见的留言板，论坛，注册，发帖都是用动态网页实现的。</li></ul><p><strong>③小结提问</strong><br>1）什么是web服务？<br>答：提供网页浏览功能的服务。<br>即安装并启用web服务软件如：httpd/nginx等软件。客户端可以通过浏览器访问网站。</p><p>2）什么是web服务器？<br>答：简单来理解就是安装web服务软件，并能够提供web服务的机器。</p><p>3)Web一般是分为客户端与服务器端，两者是如何交互的？<br>答：通过HTTP协议。例如：<a href="http://www.zhoull0801.top/">http://www.zhoull0801.top/</a></p><p>4)Aapche（httpd）能不能解析动态网页？<br>答：不能，Apache负责静态页面的解析。</p><h4 id="2-2-PHP-—–像极了服务生"><a href="#2-2-PHP-—–像极了服务生" class="headerlink" title="2.2 PHP —–像极了服务生"></a><strong>2.2 PHP —–像极了服务生</strong></h4><p>作用：PHP主要负责PHP脚本程序的解析以及实现与MySQL数据库的交互工作，动态页面中的注册/登陆/下单/支付等大多数功能都是基于PHP+MySQL进行实现。PHP是一种通用开源脚本语言。</p><p><img src="https://pic1.zhimg.com/v2-7d466903cde40ceca259c0f34b38e6ec_b.jpg" alt="img"></p><p>（1）当客户端请求的是动态资源时，Apache(httpd程序)会调用libphpX.so模块进行相应的解析。</p><p>（2）如果解析处理需要用到后台数据库相关数据，此时php程序也会连接后台数据库。</p><p>（3） 最终php程序将解析后的结果返回给Apache(httpd程序)，让Apache返回给客户端。</p><h4 id="2-3-MySQL-—–像极了大厨"><a href="#2-3-MySQL-—–像极了大厨" class="headerlink" title="2.3  MySQL —–像极了大厨"></a><strong>2.3  MySQL —–像极了大厨</strong></h4><p>作用：MySQL是一个关系型数据库管理系统，有瑞典MySQL AB公司开发，目前属于Oracle旗下产品。其主要作用用于永久的存储数据。</p><p><img src="https://pic1.zhimg.com/v2-a8557b2274c595b7df0590eb09dd76e0_b.jpg" alt="img"></p><h5 id="LAMP架构是什么？-—–像极了饭店"><a href="#LAMP架构是什么？-—–像极了饭店" class="headerlink" title="LAMP架构是什么？  —–像极了饭店"></a><strong>LAMP架构是什么？  —–像极了饭店</strong></h5><p><img src="F:\C盘移动文件\lamp-example-e00a7a5075194ff18ea17f3e3bf05f2d.png" alt="lamp-example-e00a7a5075194ff18ea17f3e3bf05f2d"></p><p><img src="https://pic3.zhimg.com/v2-0b2a86a1c22fd77997982dd8f7743ff2_b.jpg" alt="img"></p><p>(1) Apache像极了饭店前台，专门用来接受客户请求，并做一些静态页面处理(只买酒水饮料)。</p><p>(2) PHP像极了服务生，他专门用来解析处理由前台不能处理的”订单”，如用户想吃一碗意大利面，服务生就需要和后厨沟通，并做相应的安排处理.然后将处理后的结果返回给前台，由前台再给用户，因为服务生太丑了，见不得人。</p><p>(3) MySQL像极了后厨，专门用来存放食材，并且只能由中间的服务生和后厨沟通，来获取什么食材。</p><p><strong>· 专业解释如下</strong></p><p>(1) 客户端发送请求连接web服务器的80端口，由Apache相应并处理用户的静态请求。</p><p>(2) 如果客户端请求的是动态资源，由Apache加载调用libphpX.so模块(安装php程序带来)进行解析处理。</p><p>(3) 如果处理需要和后台数据库沟通，那么由php程序去完成。</p><p>(4) Php程序将处理完后的结果再返回给Apache，由Apache返回给客户端。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>励志总结</title>
       <link href="/2021/06/16/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/"/>
       <url>/2021/06/16/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/</url>
@@ -275,9 +300,9 @@
     
     
     <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -297,9 +322,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -308,9 +333,9 @@
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
