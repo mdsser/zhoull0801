@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Shell脚本(中)</title>
+      <link href="/2021/06/20/Shell%E8%84%9A%E6%9C%AC-%E4%B8%AD/"/>
+      <url>/2021/06/20/Shell%E8%84%9A%E6%9C%AC-%E4%B8%AD/</url>
+      
+        <content type="html"><![CDATA[<p>1、9*9乘法表</p><p>#! /bin/bash</p><p>2、检查特定的软件包是否已经安装</p><p>#! /bin/bash</p><p>if [ $# -eq 0 ];then</p><p>echo “你需要制定一个软件包作为脚本参数”</p><p>echo “用法:$0 软件包名称 …”</p><p>fi</p><p>for package in “$@”</p><p>do</p><p>if rpm -q ${package} &amp;&gt;/dev/null ;then</p><p>echo -e “${package}\033[32m已经安装\033[0m”</p><p>else</p><p>echo -e “${package}\033[34,1m已经安装\033[0m”</p><p>fi</p><p>done</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> shell脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LAMP架构介绍</title>
       <link href="/2021/06/19/LAMP%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/"/>
       <url>/2021/06/19/LAMP%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/</url>
@@ -30,8 +55,8 @@
     
     <entry>
       <title>励志总结</title>
-      <link href="/2021/06/16/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/"/>
-      <url>/2021/06/16/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/</url>
+      <link href="/2021/06/16/%E8%8B%B1%E8%AF%AD/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/"/>
+      <url>/2021/06/16/%E8%8B%B1%E8%AF%AD/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/</url>
       
         <content type="html"><![CDATA[<p>Those time when you get up early and you work hard.</p><p>那些你很早爬起来努力的时光</p><p>Those times when you stay up late and you work hard.</p><p>那些你熬夜刻苦训练的日子</p><p>Those times when you don’t feel like working, you’re too tired and you don’t want to push yourself, but you do it anyway，that is actually the dream.</p><p>那些你觉得太累了不想继续努力，但仍然咬牙坚持的时光</p><p>It’s not the destination, it’s the journey.</p><p>但是，真正的梦想不是到达终点，而是享受旅途</p><p>And if you guys can understand that</p><p>如果你们能理解这个道理</p><p>Then if you will see happen</p><p>你会发现，在努力的过程中</p><p>Is that you won’t accomplish your dreams you dreams won’t come true </p><p>你的梦想或许会实现，也或许不会</p><p>something greater will</p><p>但总会有一些更伟大的事情会随之而来。</p>]]></content>
       
@@ -55,8 +80,8 @@
     
     <entry>
       <title>Shell脚本100例(上)</title>
-      <link href="/2021/06/15/SHELL%E8%84%9A%E6%9C%AC100%E4%BE%8B-%E4%B8%8A/"/>
-      <url>/2021/06/15/SHELL%E8%84%9A%E6%9C%AC100%E4%BE%8B-%E4%B8%8A/</url>
+      <link href="/2021/06/15/Shell%E8%84%9A%E6%9C%AC-%E4%B8%8A/"/>
+      <url>/2021/06/15/Shell%E8%84%9A%E6%9C%AC-%E4%B8%8A/</url>
       
         <content type="html"><![CDATA[<h4 id="1、编写hello-world脚本"><a href="#1、编写hello-world脚本" class="headerlink" title="1、编写hello world脚本"></a><strong>1、编写hello world脚本</strong></h4><blockquote><p>#! /bin/bash</p><p>echo “hello world”</p></blockquote><h4 id="2、通过位置变量创建Linux系统账户及密码"><a href="#2、通过位置变量创建Linux系统账户及密码" class="headerlink" title="2、通过位置变量创建Linux系统账户及密码"></a><strong>2、通过位置变量创建Linux系统账户及密码</strong></h4><blockquote><p>#! /bin/bash</p><p>#$1 是执行脚本的第一个参数，$2是执行脚本的第二个参数</p><p>useradd “$1”</p><p>echo “$2” | passwd –stdin “$2”</p></blockquote><h4 id="3、每周5使用tar命令备份-var-log下的所有日志文件"><a href="#3、每周5使用tar命令备份-var-log下的所有日志文件" class="headerlink" title="3、每周5使用tar命令备份/var/log下的所有日志文件"></a><strong>3、每周5使用tar命令备份/var/log下的所有日志文件</strong></h4><blockquote><p>#! /bin/bash</p><p>#编写备份脚本，备份后的文件名包括日期标签，防止后面的备份将前面的备份数据覆盖</p><p>#注意date命令需要使用反引号括起来，反引号在键盘<tab>键上面 </p><p>tar  -czf  log-<code>date +%Y%m%d</code>.tar.gz  /var/log</p><p>#crontab -e                        #编写计划任务，执行备份脚本</p><p>00 03 * * 5     /root/logbak.sh</p></blockquote><h4 id="4、一键部署LNMP（RPM包版本）"><a href="#4、一键部署LNMP（RPM包版本）" class="headerlink" title="4、一键部署LNMP（RPM包版本）"></a><strong>4、一键部署LNMP（RPM包版本）</strong></h4><blockquote><p>#! /bin/bash</p><p>#使用yum安装部署LNMP，需要提前配置好yum源，否则该脚本会失败</p><p>#本脚本使用于centos7.2或RHEL7.2 </p><p>yum -y install httpd</p><p>yum -y install mariadb mariadb-devel mariadb-server</p><p>yum -y install php*</p><p>systemctl start httpd mariadb </p><p>systemctl enable httpd mariadb</p></blockquote><h4 id="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"><a href="#5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员" class="headerlink" title="5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员"></a><strong>5、实时监控本机内存和硬盘剩余空间，剩余内存小于500M、根分区剩余空间小于1000M时，发送报警邮件给root管理员</strong></h4><blockquote><p>#! /bin/bash</p><p>#提取根分区剩余空间</p><p>disk_size=$(df / |awk ‘///{print $4}’)</p><p>#提取内存剩余空间</p><p>men_size=$(free |awk ‘/Mem/{print $4}’)</p><p>while :</p><p>do</p><p>#注意内存和磁盘提取的空间大小都是以kb为单位</p><p>if [ $disk_size -le 512000 -a $men_size -le 1024000 ];then mail -s Warning root &lt;&lt;EOF</p><p>Insufficient resources, 资源不足</p><p>EOF</p><p>fi</p><p>done</p></blockquote><h4 id="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"><a href="#6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。" class="headerlink" title="6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。"></a><strong>6、脚本生成一个100以内的随机数，提示用户猜数字，根据用户的输入，提示用户猜对了，猜小了或猜大了，直至用户猜对脚本结束。</strong></h4><blockquote><p>#! /bin/bash</p><p>#RANDOM为系统自带的系统变量，值为0-32767的随机数</p><p>#使用取余算法将随机数变为1-100的随机数</p><p>num=$[RANDOM%100+1]</p><p>#使用read提示用户猜数字</p><p>#使用if判断用户猜数字的大小关系：-eq(等于)，-ne(不等于)，-gt(大鱼)，-ge(大于等于)，-lt(小于)，-le(小于或等于)</p><p>while :<br>do<br>        read -p “计算机生成了一个1-100的随机数，你猜:” a<br>        if [  $a  -eq  $num  ];then<br>                echo   “恭喜，猜对了”<br>                exit<br>        elif [  $a  -gt  $num  ];then<br>                echo  “Oops,猜大了”<br>        else<br>                echo  “Oops,猜小了”<br>        fi<br>done</p></blockquote><h4 id="7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）"><a href="#7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）" class="headerlink" title="7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）"></a><strong>7、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用字串对比版本）</strong></h4><blockquote><p>#! /bin/bash</p><p>if [     $USER    ==   “root”    ];then</p><p>​               yum  -y  install   vsftpd</p><p>else</p><p>​                echo  “您不是管理员，没有权限安装软件”</p><p>fi</p></blockquote><h4 id="8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）"><a href="#8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）" class="headerlink" title="8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）"></a><strong>8、检测本机当前用户是否为超级管理员，如果是管理员，则使用yum安装vsftpd，如果不是，则提示您非管理员（使用UID数字对比版本）</strong></h4><blockquote><p>#! /bin/bash</p><p>if [     $UID    -eq    0    ];then</p><p>​               yum  -y  install   vsftpd</p><p>else</p><p>​                echo  “您不是管理员，没有权限安装软件”</p><p>fi</p></blockquote><h4 id="9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。"><a href="#9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。" class="headerlink" title="9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。"></a><strong>9、编写脚本：提示用户输入用户名和密码，脚本自动创建相应的账户及配置密码。如果用户不输入账户名，则提示必须输入账户名并退出脚本；如果用户不输入密码，则统一使用默认的123456作为默认密码。</strong></h4><blockquote><p>#! /bin/bash<br>read -p   “请输入用户名：”  user<br>#使用-z可以判断一个变量是否为空，如果为空，提示用户必须输入账号名，并退出脚本，退出码为2<br>#没有输入用户名脚本退出后，使用$?查看的返回码为2<br>if  [   -z    $user   ];then<br>        echo “您不需输入账户名”<br>        exit 2<br>fi<br>#使用stty -echo 关闭shell的回显功能<br>#使用stty echo 打开shell的回显功能<br>stty -echo<br>read -p   “请输入密码：”    pass<br>stty echo<br>pass=${pass:-123456}<br>useradd    “$user”<br>echo  “$pass”   | passwd   –stdin  “$user”</p></blockquote><p>10、依次提示用户输入3个整数，脚本根据数字大小依次排序输出3个数字</p><blockquote><p>#! /bin/bash<br>read -p “请输入一个整数:” num1<br>read -p “请输入一个整数:” num2<br>read -p “请输入一个整数:” num3<br>#不管谁大谁小，最后都打印echo “$num1,$num2,$num3”<br>#num1中永远存最小的值，num2中永远存中间值，num3永远存最大值<br>#如果输入的不是这样的顺序，则改变数的存储顺序，如：可以将num1和num2的值对调<br>tmp=0<br>#如果num1大于num2，就把num1和num2的值对调，确保num1变量中存的是最小值<br>if [  $num1  -gt  $num2 ];then<br>        tmp=$num1<br>        num1=$num2<br>        num2=$tmp<br> cat number.sh<br>#! /bin/bash<br>read -p “请输入一个整数:” num1<br>read -p “请输入一个整数:” num2<br>read -p “请输入一个整数:” num3<br>#不管谁大谁小，最后都打印echo “$num1,$num2,$num3”<br>#num1中永远存最小的值，num2中永远存中间值，num3永远存最大值<br>#如果输入的不是这样的顺序，则改变数的存储顺序，如：可以将num1和num2的值对调<br>tmp=0<br>#如果num1大于num2，就把num1和num2的值对调，确保num1变量中存的是最小值<br>if [  $num1  -gt  $num2 ];then<br>        tmp=$num1<br>        num1=$num2<br>        num2=$tmp<br>fi<br>#如果num1大于num3，就把num1和num3对调，确保num1变量中存的是最小值<br>if [ $num1   -gt  $num3 ];then<br>      tmp=$num1<br>      num1=$num3<br>      num3=$tmp<br>fi<br>#如果num2大于num3，就把num2和num3对标，确保num2变量中存的是小一点的值<br>if [ $num2   -gt  $num3 ];then<br>        tmp=$num2<br>        num2=$num3<br>        num3=$tmp<br>fi<br>echo “排序后数据为:$num1,$num2,$num3”</p></blockquote>]]></content>
       
@@ -105,8 +130,8 @@
     
     <entry>
       <title>英语短语</title>
-      <link href="/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/"/>
-      <url>/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/</url>
+      <link href="/2021/06/13/%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/"/>
+      <url>/2021/06/13/%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/</url>
       
         <content type="html"><![CDATA[<div align = "center">英语短语</div><hr><p>1、as far as                    至于,直到,远到</p><p>2、go on doing sth.      继续做同一件事    go on to do sth.       接下来做另一件事</p><p>3、take in吸收    take on承担    take up   拿起 take off        起飞,脱开,离开</p><p>4、might as well        不妨,倒不如,还是….的好</p><p>5、no sooner than    一……就……</p><p>6、make oneself at home    别拘束,随便,就当在家一样</p><p>7、make up     编造,化装</p><p>8、set aside     留出,不顾 set out 出发,开始 set up 建立,开业 set in  开始,到来</p><p>​      </p>]]></content>
       
@@ -209,8 +234,8 @@
     
     <entry>
       <title>ARP</title>
-      <link href="/2021/06/10/ARP/"/>
-      <url>/2021/06/10/ARP/</url>
+      <link href="/2021/06/10/%E7%BD%91%E7%BB%9C/ARP/"/>
+      <url>/2021/06/10/%E7%BD%91%E7%BB%9C/ARP/</url>
       
         <content type="html"><![CDATA[<p><strong>什么是ARP？ARP作用和使用场景</strong></p><hr><p><strong>一、什么是ARP</strong><br>ARP是地址转换协议（Address Resolution Protocol）的英文缩写，它是一个链路层协议，工作在OSI 模型的第二层，在本层和硬件接口间进行联系，同时对上层（网络层）提供服务。我们知道二层的以太网交换设备并不能识别32位的IP地址，它们是以48位以太网地址（就是我们常说的MAC地址）传输以太网数据包的。也就是说IP数据包在局域网内部传输时并不是靠IP地址而是靠MAC地址来识别目标的，因此IP地址与MAC地址之间就必须存在一种对应关系，而ARP协议就是用来确定这种对应关系的协议。<br>ARP是地址解析协议，用于根据目的IP地址来解析MAC地址，进行二层通讯。<br><strong>二、工作原理</strong><br>工作原理是通过广播发送ARP查询请求目的IP的MAC地址，与发送方处于同一广播域的主机收到该请求后，如果确认查询的IP是本机，则单播回应本机的MAC地址；如果发现查询的IP不是本机，则不回应；发送方接收到ARP回应后，把该IP和MAC地址写入本机ARP缓存表，下次再与该IP进行二层通讯，则直接使用表中的记录来进行转发。<br><strong>三、ARP的使用场景</strong><br>1、如果目的IP和本机IP属于同一网段，则ARP请求查询的就是目的IP的MAC地址<br>2、如果目的IP和本机IP不属于同一网段，当本机存在到达目的IP的路由时，则ARP请求查询的就是该路由下一跳的MAC地址；如果没有明细路由，就请求查询缺省路由下一跳（也就是网关）的MAC地址。</p>]]></content>
       
@@ -322,9 +347,9 @@
     
     
     <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -333,9 +358,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
