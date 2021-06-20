@@ -55,8 +55,8 @@
     
     <entry>
       <title>励志总结</title>
-      <link href="/2021/06/16/%E8%8B%B1%E8%AF%AD/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/"/>
-      <url>/2021/06/16/%E8%8B%B1%E8%AF%AD/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/</url>
+      <link href="/2021/06/16/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/"/>
+      <url>/2021/06/16/%E5%8A%B1%E5%BF%97%E6%80%BB%E7%BB%93/</url>
       
         <content type="html"><![CDATA[<p>Those time when you get up early and you work hard.</p><p>那些你很早爬起来努力的时光</p><p>Those times when you stay up late and you work hard.</p><p>那些你熬夜刻苦训练的日子</p><p>Those times when you don’t feel like working, you’re too tired and you don’t want to push yourself, but you do it anyway，that is actually the dream.</p><p>那些你觉得太累了不想继续努力，但仍然咬牙坚持的时光</p><p>It’s not the destination, it’s the journey.</p><p>但是，真正的梦想不是到达终点，而是享受旅途</p><p>And if you guys can understand that</p><p>如果你们能理解这个道理</p><p>Then if you will see happen</p><p>你会发现，在努力的过程中</p><p>Is that you won’t accomplish your dreams you dreams won’t come true </p><p>你的梦想或许会实现，也或许不会</p><p>something greater will</p><p>但总会有一些更伟大的事情会随之而来。</p>]]></content>
       
@@ -130,8 +130,8 @@
     
     <entry>
       <title>英语短语</title>
-      <link href="/2021/06/13/%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/"/>
-      <url>/2021/06/13/%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/</url>
+      <link href="/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/"/>
+      <url>/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/</url>
       
         <content type="html"><![CDATA[<div align = "center">英语短语</div><hr><p>1、as far as                    至于,直到,远到</p><p>2、go on doing sth.      继续做同一件事    go on to do sth.       接下来做另一件事</p><p>3、take in吸收    take on承担    take up   拿起 take off        起飞,脱开,离开</p><p>4、might as well        不妨,倒不如,还是….的好</p><p>5、no sooner than    一……就……</p><p>6、make oneself at home    别拘束,随便,就当在家一样</p><p>7、make up     编造,化装</p><p>8、set aside     留出,不顾 set out 出发,开始 set up 建立,开业 set in  开始,到来</p><p>​      </p>]]></content>
       
@@ -207,8 +207,8 @@
     
     <entry>
       <title>Linux下的压缩与解压缩命令</title>
-      <link href="/2021/06/10/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"/>
-      <url>/2021/06/10/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</url>
+      <link href="/2021/06/10/Linux/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"/>
+      <url>/2021/06/10/Linux/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</url>
       
         <content type="html"><![CDATA[<hr><hr><p><strong>gzip命令</strong></p><p>gzip命令用来压缩文件。gzip是个使用广泛的压缩程序，文件经它压缩过后，其名称后面会多处“.gz”扩展名。</p><p>gzip是在Linux系统中经常使用的一个对文件进行压缩和解压缩的命令，既方便又好用。gzip不仅可以用来压缩大的、较少使用的文件以节省磁盘空间，还可以和tar命令一起构成Linux操作系统中比较流行的压缩文件格式。据统计，gzip命令对文本文件有60%～70%的压缩率。减少文件大小有两个明显的好处，一是可以减少存储空间，二是通过网络传输文件时，可以减少传输的时间。</p><p><strong>选项：</strong></p><p>-a：使用ASCII文字模式；</p><p>-d：解开压缩文件；</p><p>-f：强行压缩文件。不理会文件名称或硬连接是否存在以及该文件是否为符号连接；</p><p>-h：在线帮助；</p><p>-l：列出压缩文件的相关信息；</p><p>-L：显示版本与版权信息；</p><p>-n：压缩文件时，不保存原来的文件名称及时间戳记；</p><p>-N：压缩文件时，保存原来的文件名称及时间戳记；</p><p>-q：不显示警告信息；</p><p>-r：递归处理，将指定目录下的所有文件及子目录一并处理；</p><p>-S或&lt;压缩字尾字符串&gt;或—-suffix&lt;压缩字尾字符串&gt;：更改压缩字尾字符串；</p><p>-t：测试压缩文件是否正确无误；</p><p>-v：显示指令执行过程；</p><p>-V：显示版本信息；</p><p>-&lt;压缩效率&gt;：压缩效率是一个介于1~9的数值，预设值为“6”，指定愈大的数值，压缩效率就会愈高；</p><p>–best：此参数的效果和指定“-9”参数相同；</p><p>–fast：此参数的效果和指定“-1”参数相同。</p><hr><p>实例</p><p>\1. 把test6目录下的每个文件压缩成.gz文件</p><p>gzip *</p><p>\2. 把上例中每个压缩的文件解压，并列出详细的信息</p><p>gzip -dv *</p><p>\3. 详细显示例1中每个压缩的文件的信息，并不解压</p><p>gzip -l *</p><p>4.压缩一个tar备份文件，此时压缩文件的扩展名为.tar.gz</p><p>gzip -r log.tar</p><p>\5. 递归的压缩目录</p><p>gzip -rv test6</p><p>这样，所有test下面的文件都变成了*.gz，目录依然存在只是目录里面的文件相应变成了*.gz.这就是压缩，和打包不同。因为是对目录操作，所以需要加上-r选项，这样也可以对子目录进行递归了。</p><p>\6. 递归地解压目录</p><p>gzip -dr test6</p><hr><p><strong>gunzip命令</strong></p><p>gunzip命令用来解压缩文件。gunzip是个使用广泛的解压缩程序，它用于解开被<a href="http://man.linuxde.net/gzip">gzip</a>压缩过的文件，这些压缩文件预设最后的扩展名为.gz。事实上gunzip就是gzip的硬连接，因此不论是压缩或解压缩，都可通过gzip指令单独完成。</p><p><strong>选项：</strong></p><p>-a：使用ASCII文字模式；</p><p>-c：把解压后的文件输出到标准输出设备；</p><p>-f：强行解开压缩文件，不理会文件名称或硬连接是否存在以及该文件是否为符号连接；</p><p>-h：在线帮助；</p><p>-l：列出压缩文件的相关信息；</p><p>-L：显示版本与版权信息；</p><p>-n：解压缩时，若压缩文件内含有原来的文件名称及时间戳记，则将其忽略不予处理；</p><p>-N：解压缩时，若压缩文件内含有原来的文件名称及时间戳记，则将其回存到解开的文件上；</p><p>-q：不显示警告信息；</p><p>-r：递归处理，将指定目录下的所有文件及子目录一并处理；</p><p>-S或&lt;压缩字尾字符串&gt;或—-suffix&lt;压缩字尾字符串&gt;：更改压缩字尾字符串；</p><p>-t：测试压缩文件是否正确无误；</p><p>-v：显示指令执行过程；</p><p>-V：显示版本信息；</p><hr><p>实例</p><p>\1. 首先将/etc目录下的所有文件以及子目录进行压缩，备份压缩包etc.<a href="http://man.linuxde.net/zip">zip</a>到/opt目录，然后对etc.zip文件进行gzip压缩，设置gzip的压缩级别为9。</p><p>zip –r /opt/etc.zip /etc</p><p>gzip -9v /opt/etc.zip</p><p>\2. 查看上述etc.zip.gz文件的压缩信息。</p><p>gzip -l /opt/etc.zip.gz</p><p>compressed    uncompressed ratio uncompressed_name</p><p>11938745      12767265  6.5% /opt/etc.zip</p><p>\3. 解压上述etc.zip.gz文件到当前目录。</p><p>[root@mylinux ~]#gzip –d /opt/etc.zip.gz</p><p>或者执行</p><p>[root@mylinux ~]#gunzip /opt/etc.zip.gz</p><p>通过上面的示例可以知道gzip –d等价于gunzip命令。</p>]]></content>
       
@@ -234,8 +234,8 @@
     
     <entry>
       <title>ARP</title>
-      <link href="/2021/06/10/%E7%BD%91%E7%BB%9C/ARP/"/>
-      <url>/2021/06/10/%E7%BD%91%E7%BB%9C/ARP/</url>
+      <link href="/2021/06/10/ARP/"/>
+      <url>/2021/06/10/ARP/</url>
       
         <content type="html"><![CDATA[<p><strong>什么是ARP？ARP作用和使用场景</strong></p><hr><p><strong>一、什么是ARP</strong><br>ARP是地址转换协议（Address Resolution Protocol）的英文缩写，它是一个链路层协议，工作在OSI 模型的第二层，在本层和硬件接口间进行联系，同时对上层（网络层）提供服务。我们知道二层的以太网交换设备并不能识别32位的IP地址，它们是以48位以太网地址（就是我们常说的MAC地址）传输以太网数据包的。也就是说IP数据包在局域网内部传输时并不是靠IP地址而是靠MAC地址来识别目标的，因此IP地址与MAC地址之间就必须存在一种对应关系，而ARP协议就是用来确定这种对应关系的协议。<br>ARP是地址解析协议，用于根据目的IP地址来解析MAC地址，进行二层通讯。<br><strong>二、工作原理</strong><br>工作原理是通过广播发送ARP查询请求目的IP的MAC地址，与发送方处于同一广播域的主机收到该请求后，如果确认查询的IP是本机，则单播回应本机的MAC地址；如果发现查询的IP不是本机，则不回应；发送方接收到ARP回应后，把该IP和MAC地址写入本机ARP缓存表，下次再与该IP进行二层通讯，则直接使用表中的记录来进行转发。<br><strong>三、ARP的使用场景</strong><br>1、如果目的IP和本机IP属于同一网段，则ARP请求查询的就是目的IP的MAC地址<br>2、如果目的IP和本机IP不属于同一网段，当本机存在到达目的IP的路由时，则ARP请求查询的就是该路由下一跳的MAC地址；如果没有明细路由，就请求查询缺省路由下一跳（也就是网关）的MAC地址。</p>]]></content>
       
@@ -249,11 +249,11 @@
       
         <tags>
             
-            <tag> 网络 </tag>
-            
             <tag> 以太网 </tag>
             
             <tag> 局域网 </tag>
+            
+            <tag> 网络 </tag>
             
         </tags>
       
@@ -263,8 +263,8 @@
     
     <entry>
       <title>Linux基础命令</title>
-      <link href="/2021/06/07/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
-      <url>/2021/06/07/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+      <link href="/2021/06/07/Linux/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
+      <url>/2021/06/07/Linux/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
       
         <content type="html"><![CDATA[<hr><p>一、基础命令</p><p>​    ls        //列出目录内容</p><p>​                d    //目录文件</p><p>​                b   //块设备文件（block）</p><p>​                c   //字符设备文件（character）</p><p>​                l   //符号链接文件（symbolic link file）                </p><p>​                p   //命令管道（pipe）</p><p>​                s   //套接字文件（socket）</p>]]></content>
       
@@ -303,20 +303,20 @@
     
     
     <entry>
-      <title>Linux</title>
-      <link href="/Linux/index.html"/>
-      <url>/Linux/index.html</url>
+      <title>English</title>
+      <link href="/English/index.html"/>
+      <url>/English/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>url: C:\Hexo\source_posts\Linux</p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>MySQL</title>
-      <link href="/MySQL/index.html"/>
-      <url>/MySQL/index.html</url>
+      <title>Linux</title>
+      <link href="/Linux/index.html"/>
+      <url>/Linux/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -336,9 +336,9 @@
     
     
     <entry>
-      <title>English</title>
-      <link href="/English/index.html"/>
-      <url>/English/index.html</url>
+      <title>MySQL</title>
+      <link href="/MySQL/index.html"/>
+      <url>/MySQL/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -352,17 +352,6 @@
       <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
-      
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
       
     </entry>
     
@@ -391,9 +380,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -402,9 +391,20 @@
     
     
     <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
+      
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
