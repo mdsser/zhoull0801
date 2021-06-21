@@ -580,14 +580,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-20
+                    2021-06-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    95
+                    118
                 </div>
                 
 
@@ -607,6 +607,7 @@
                 <p>1、9*9乘法表</p>
 <p>#! /bin/bash</p>
 <p>2、检查特定的软件包是否已经安装</p>
+<blockquote>
 <p>#! /bin/bash</p>
 <p>if [ $# -eq 0 ];then</p>
 <p>echo “你需要制定一个软件包作为脚本参数”</p>
@@ -620,6 +621,12 @@
 <p>echo -e “${package}\033[34,1m已经安装\033[0m”</p>
 <p>fi</p>
 <p>done</p>
+</blockquote>
+<p>3、查找Linux系统中的僵尸进程</p>
+<blockquote>
+<p>#! /bin/bash</p>
+<p>ps aux |awk ‘{if($8 == “Z”){print $2,$11}}’</p>
+</blockquote>
 
                 
             </div>
@@ -1098,7 +1105,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.4k</span>
+                        class="white-color">7.5k</span>
             
             
             
