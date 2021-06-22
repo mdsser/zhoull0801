@@ -249,11 +249,11 @@
       
         <tags>
             
-            <tag> 网络 </tag>
-            
             <tag> 以太网 </tag>
             
             <tag> 局域网 </tag>
+            
+            <tag> 网络 </tag>
             
         </tags>
       
@@ -303,53 +303,9 @@
     
     
     <entry>
-      <title>English</title>
-      <link href="/English/index.html"/>
-      <url>/English/index.html</url>
-      
-        <content type="html"><![CDATA[<p>url: C:\Hexo\source_posts\Linux</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Linux</title>
       <link href="/Linux/index.html"/>
       <url>/Linux/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
-      
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Network</title>
-      <link href="/Network/index.html"/>
-      <url>/Network/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -380,6 +336,17 @@
     
     
     <entry>
+      <title>English</title>
+      <link href="/English/index.html"/>
+      <url>/English/index.html</url>
+      
+        <content type="html"><![CDATA[<p>url: C:\Hexo\source_posts\Linux</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -391,9 +358,31 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>Network</title>
+      <link href="/Network/index.html"/>
+      <url>/Network/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
+      
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -405,6 +394,17 @@
       <title>gallery</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
