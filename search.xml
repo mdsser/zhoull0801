@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>菜鸟入门Docker</title>
+      <link href="/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/"/>
+      <url>/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/</url>
+      
+        <content type="html"><![CDATA[<p>什么是Docker</p><hr><p>在学习docker时，在网上看到一篇博文讲得很好，自己总结一下就是： Docker将应用程序与该程序的依赖，打包在一个文件里面，改文件包括了所有打包得应用程序的所有依赖，像数据库等；直接运行改文件，就可以让程序跑起来，从而不用再去考虑环境问题。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IP和TCP抓包分析实验</title>
       <link href="/2021/06/23/H3CNE%E5%AE%9E%E9%AA%8C%E6%96%87%E6%A1%A3/IP%E5%92%8CTCP%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/"/>
       <url>/2021/06/23/H3CNE%E5%AE%9E%E9%AA%8C%E6%96%87%E6%A1%A3/IP%E5%92%8CTCP%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/</url>
@@ -328,22 +355,22 @@
     
     
     <entry>
-      <title>English</title>
-      <link href="/English/index.html"/>
-      <url>/English/index.html</url>
+      <title>Linux</title>
+      <link href="/Linux/index.html"/>
+      <url>/Linux/index.html</url>
       
-        <content type="html"><![CDATA[<p>url: C:\Hexo\source_posts\Linux</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>Linux</title>
-      <link href="/Linux/index.html"/>
-      <url>/Linux/index.html</url>
+      <title>English</title>
+      <link href="/English/index.html"/>
+      <url>/English/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>url: C:\Hexo\source_posts\Linux</p>]]></content>
       
     </entry>
     
@@ -394,22 +421,22 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
       
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
       
     </entry>
     
