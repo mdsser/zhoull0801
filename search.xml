@@ -8,7 +8,7 @@
       <link href="/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/"/>
       <url>/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/</url>
       
-        <content type="html"><![CDATA[<div align = "center">什么是Docker</div><hr><p>在学习docker时，在网上看到一篇博文讲得很好，自己总结一下就是： Docker将应用程序与该程序的依赖，打包在一个文件里面，改文件包括了所有打包得应用程序的所有依赖，像数据库等；直接运行改文件，就可以让程序跑起来，从而不用再去考虑环境问题。</p><p><strong>虚拟机啊和Linux容器</strong></p><ul><li><p>说到Docker就必须了解虚拟机和Linux容器，虚拟机可以实现在一种操作系统里面运行另一种操作系统。</p><p>比如在 <strong>Windows 系统</strong>里面运行 <strong>Linux 系统</strong>等，而且不会对实际的电脑产生影响，不想用时将虚拟机相关文件删掉即可，用户可以通过虚拟机还原软件的原始环境，实际上就是解决了配置环境的问题。尽管它有资源占用多，启动慢等缺点。</p></li><li><p>Linux容器是为了解决虚拟机的确缺点而生的，Linux 发展出了另一种虚拟化技术：Linux 容器（Linux Containers，缩写为 LXC）。</p><p>Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。或者说，在正常进程的外面套了一个保护层。</p><p>对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层系统的隔离。由于容器是进程级别的，相比虚拟机有很多优势。像启动快、资源占用少等。</p></li><li><p>而Docker 就是属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。</p><p>就像一开始说的，Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题</p></li></ul><div align = "center">Docker用途</div><p>Docker的主要用途，目前有三大类。</p><ol><li><p><strong>提供一次性的环境</strong></p><p>比如，本地测试他人的软件、持续集成的时候提供单元测试和构建的环境</p></li><li><p><strong>提供弹性的云服务</strong></p><p>因为Docker容器可以随开随关，很适合动态扩容和缩容。</p><p>3.<strong>组建微服务架构</strong></p></li></ol><p>​       通过多个容器，一台机器可以跑多个服务，因此在本机就可以模拟出微服务架构。</p><div align = "center">Docker安装</div><p>（1） 设置仓库</p><p>卸载旧版本</p><blockquote><p>sudo apt-get remove docker docker-engine docker.io containerd runc</p></blockquote><p>更新 apt 包索引</p><blockquote><p>sudo apt-get update</p></blockquote><p>安装apt依赖包，用于通过HTTPS来获取仓库</p>]]></content>
+        <content type="html"><![CDATA[<div align = "center">什么是Docker</div><hr><p>在学习docker时，在网上看到一篇博文讲得很好，自己总结一下就是： Docker将应用程序与该程序的依赖，打包在一个文件里面，改文件包括了所有打包得应用程序的所有依赖，像数据库等；直接运行改文件，就可以让程序跑起来，从而不用再去考虑环境问题。</p><p><strong>虚拟机啊和Linux容器</strong></p><ul><li><p>说到Docker就必须了解虚拟机和Linux容器，虚拟机可以实现在一种操作系统里面运行另一种操作系统。</p><p>比如在 <strong>Windows 系统</strong>里面运行 <strong>Linux 系统</strong>等，而且不会对实际的电脑产生影响，不想用时将虚拟机相关文件删掉即可，用户可以通过虚拟机还原软件的原始环境，实际上就是解决了配置环境的问题。尽管它有资源占用多，启动慢等缺点。</p></li><li><p>Linux容器是为了解决虚拟机的确缺点而生的，Linux 发展出了另一种虚拟化技术：Linux 容器（Linux Containers，缩写为 LXC）。</p><p>Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。或者说，在正常进程的外面套了一个保护层。</p><p>对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层系统的隔离。由于容器是进程级别的，相比虚拟机有很多优势。像启动快、资源占用少等。</p></li><li><p>而Docker 就是属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。</p><p>就像一开始说的，Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题</p></li></ul><div align = "center">Docker用途</div><p>Docker的主要用途，目前有三大类。</p><ol><li><p><strong>提供一次性的环境</strong></p><p>比如，本地测试他人的软件、持续集成的时候提供单元测试和构建的环境</p></li><li><p><strong>提供弹性的云服务</strong></p><p>因为Docker容器可以随开随关，很适合动态扩容和缩容。</p><p>3.<strong>组建微服务架构</strong></p></li></ol><p>​       通过多个容器，一台机器可以跑多个服务，因此在本机就可以模拟出微服务架构。</p><div align = "center">Docker安装</div><p>（1） 设置仓库</p><p>卸载旧版本</p><blockquote><p>sudo apt-get remove docker docker-engine docker.io containerd runc</p></blockquote><p>更新 apt 包索引</p><blockquote><p>sudo apt-get update</p></blockquote><p>安装apt依赖包，用于通过HTTPS来获取仓库</p><blockquote><p>sudo apt-get install</p><p>apt-transport-https</p><p>ca-certificates</p><p>curl</p><p>gnupg-agent</p><p>software-properties-common</p></blockquote><p>使用以下指令设置稳定版仓库</p><blockquote><p>sudo add-apt-repository</p><p>“deb [arch=amd64] <a href="https://download.docker.com/linux/ubuntu">https://download.docker.com/linux/ubuntu</a></p><p>$(lsb_release -cs)</p><p>stable”</p></blockquote><p>(2) 安装Docker Engine-Community</p><p>更新apt包索引</p><blockquote><p>sudo apt-get update</p></blockquote><p>安装最新版本的Docker Engine-Community和containerd</p><blockquote><p>sudo apt-get install docker-ce docker-ce-cli containerd.io</p></blockquote><p>(3) 验证安装成功</p><p>输入命令：docker，出现以下命令即安装成功</p><p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210625212557.png" alt="image-20210625212549787"></p><div align = "center">Docker启动与停止</div><blockquote><p>(1)    启动docker</p><p>sudo service docker start</p><p>(2)    停止docker</p><p>sudo service docker stop</p><p>(3)    重启docker</p><p>sudo service docker restart</p></blockquote><div align = "center">Docker配置</div><p>(1)    将用户加入Docker用户组</p><p>Docker需要用户具有sudo权限，为了避免每次命令都输入sudo，建议将用户加入Docker用户组</p><ul><li>添加docker用户组</li></ul><blockquote><p>   sudo groupadd docker</p></blockquote><ul><li>将当前用户加入到docker用户组</li></ul><blockquote><p>   sudo gpasswd -a ${USER} docker</p></blockquote><ul><li>重启docker服务</li></ul><blockquote><p>   sudo service docker restart</p></blockquote><ul><li>退出当前用户重登一下</li></ul><p>(2)     配置daemon.json</p><ul><li>进入root权限</li></ul><blockquote><p>   su root</p></blockquote><p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210626102318.png" alt="image-20210626102009138"></p><ul><li><p>进入docker文件</p><p>查看改文件下只有一个key.json，新建一个daemon.json文件。</p><p>查看文件夹命令：ls</p><p>新建文件夹命令：vim daemon.json</p><p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210626111837.png" alt="image-20210626102602007"></p></li><li><p>编辑docker.json文件</p><p>输入以下内容：</p><p>{ “registry-mirrors”:[“<a href="https://docker.mirrors.ustc.edu.cn&quot;]">https://docker.mirrors.ustc.edu.cn&quot;]</a> }</p></li></ul><p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210626112004.png" alt="image-20210626111959322"></p><p>保存退出，重启docker服务。</p><div align = "center">image文件</div><p>Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p><p>简单理解就是，将程序打包在image文件（也叫image仓库）里面，运行image文件，生成一个容器生例，容器里面跑程序（已将mysql之类的依赖都打包在里面了，不用去配置数据库等环境）</p><p>也就是说，别人的程序打包在image里面，自己直接拿过来后不用配置环境就可以直接跑（很神奇）</p><blockquote><p>列出本机的所有 image 文件。</p><p>$ docker image ls</p><p>删除 image 文件</p><p>$ docker image rm [imageName]</p></blockquote><p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210626112121.png" alt="image-20210626112115186"></p><div align = "center">docker的另一种安装方式</div><blockquote><ol><li><p>下载docker-ce的repo</p><p>curl <a href="https://download.docker.com/linux/centos/docker-ce.repo">https://download.docker.com/linux/centos/docker-ce.repo</a> -o /etc/yum.repos.d/docker-ce.repo</p></li><li><p>安装依赖</p><p>yum install <a href="https://download.docker.com/linux/fedora/30/x86_64/stable/Packages/containerd.io-1.2.6-3.3.fc30.x86_64.rpm">https://download.docker.com/linux/fedora/30/x86_64/stable/Packages/containerd.io-1.2.6-3.3.fc30.x86_64.rpm</a></p></li><li><p> 安装docker-ce</p></li></ol><p>   dnf -y  install docker-ce  docker-ce-cli –nobest</p><ol start="4"><li><p>启动 docker</p><p>systemctl start docker</p></li><li><p>查看 docker 版本信息</p><p>docker -v</p></li><li><p>设置开机自动启动</p><p>systemctl enable –now docker</p></li></ol></blockquote>]]></content>
       
       
       <categories>
@@ -301,11 +301,11 @@
       
         <tags>
             
-            <tag> 网络 </tag>
-            
             <tag> 以太网 </tag>
             
             <tag> 局域网 </tag>
+            
+            <tag> 网络 </tag>
             
         </tags>
       
@@ -355,22 +355,11 @@
     
     
     <entry>
-      <title>Network</title>
-      <link href="/Network/index.html"/>
-      <url>/Network/index.html</url>
+      <title>English</title>
+      <link href="/English/index.html"/>
+      <url>/English/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>url: C:\Hexo\source_posts\Linux</p>]]></content>
       
     </entry>
     
@@ -388,20 +377,31 @@
     
     
     <entry>
-      <title>English</title>
-      <link href="/English/index.html"/>
-      <url>/English/index.html</url>
+      <title>MySQL</title>
+      <link href="/MySQL/index.html"/>
+      <url>/MySQL/index.html</url>
       
-        <content type="html"><![CDATA[<p>url: C:\Hexo\source_posts\Linux</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>MySQL</title>
-      <link href="/MySQL/index.html"/>
-      <url>/MySQL/index.html</url>
+      <title>Network</title>
+      <link href="/Network/index.html"/>
+      <url>/Network/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -426,6 +426,17 @@
       <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
+      
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
       
     </entry>
     
@@ -459,17 +470,6 @@
       <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
-      
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
       
     </entry>
     

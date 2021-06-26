@@ -490,14 +490,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-25
+                    2021-06-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    693
+                    1.3k
                 </div>
                 
 
@@ -556,6 +556,128 @@
 <p>sudo apt-get update</p>
 </blockquote>
 <p>安装apt依赖包，用于通过HTTPS来获取仓库</p>
+<blockquote>
+<p>sudo apt-get install</p>
+<p>apt-transport-https</p>
+<p>ca-certificates</p>
+<p>curl</p>
+<p>gnupg-agent</p>
+<p>software-properties-common</p>
+</blockquote>
+<p>使用以下指令设置稳定版仓库</p>
+<blockquote>
+<p>sudo add-apt-repository</p>
+<p>“deb [arch=amd64] <a target="_blank" rel="noopener" href="https://download.docker.com/linux/ubuntu">https://download.docker.com/linux/ubuntu</a></p>
+<p>$(lsb_release -cs)</p>
+<p>stable”</p>
+</blockquote>
+<p>(2) 安装Docker Engine-Community</p>
+<p>更新apt包索引</p>
+<blockquote>
+<p>sudo apt-get update</p>
+</blockquote>
+<p>安装最新版本的Docker Engine-Community和containerd</p>
+<blockquote>
+<p>sudo apt-get install docker-ce docker-ce-cli containerd.io</p>
+</blockquote>
+<p>(3) 验证安装成功</p>
+<p>输入命令：docker，出现以下命令即安装成功</p>
+<p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210625212557.png" alt="image-20210625212549787"></p>
+<div align = "center">Docker启动与停止</div>
+
+<blockquote>
+<p>(1)    启动docker</p>
+<p>sudo service docker start</p>
+<p>(2)    停止docker</p>
+<p>sudo service docker stop</p>
+<p>(3)    重启docker</p>
+<p>sudo service docker restart</p>
+</blockquote>
+<div align = "center">Docker配置</div>
+
+<p>(1)    将用户加入Docker用户组</p>
+<p>Docker需要用户具有sudo权限，为了避免每次命令都输入sudo，建议将用户加入Docker用户组</p>
+<ul>
+<li>添加docker用户组</li>
+</ul>
+<blockquote>
+<p>   sudo groupadd docker</p>
+</blockquote>
+<ul>
+<li>将当前用户加入到docker用户组</li>
+</ul>
+<blockquote>
+<p>   sudo gpasswd -a ${USER} docker</p>
+</blockquote>
+<ul>
+<li>重启docker服务</li>
+</ul>
+<blockquote>
+<p>   sudo service docker restart</p>
+</blockquote>
+<ul>
+<li>退出当前用户重登一下</li>
+</ul>
+<p>(2)     配置daemon.json</p>
+<ul>
+<li>进入root权限</li>
+</ul>
+<blockquote>
+<p>   su root</p>
+</blockquote>
+<p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210626102318.png" alt="image-20210626102009138"></p>
+<ul>
+<li><p>进入docker文件</p>
+<p>查看改文件下只有一个key.json，新建一个daemon.json文件。</p>
+<p>查看文件夹命令：ls</p>
+<p>新建文件夹命令：vim daemon.json</p>
+<p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210626111837.png" alt="image-20210626102602007"></p>
+</li>
+<li><p>编辑docker.json文件</p>
+<p>输入以下内容：</p>
+<p>{ “registry-mirrors”:[“<a href="https://docker.mirrors.ustc.edu.cn&quot;]">https://docker.mirrors.ustc.edu.cn&quot;]</a> }</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210626112004.png" alt="image-20210626111959322"></p>
+<p>保存退出，重启docker服务。</p>
+<div align = "center">image文件</div>
+
+<p>Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p>
+<p>简单理解就是，将程序打包在image文件（也叫image仓库）里面，运行image文件，生成一个容器生例，容器里面跑程序（已将mysql之类的依赖都打包在里面了，不用去配置数据库等环境）</p>
+<p>也就是说，别人的程序打包在image里面，自己直接拿过来后不用配置环境就可以直接跑（很神奇）</p>
+<blockquote>
+<p>列出本机的所有 image 文件。</p>
+<p>$ docker image ls</p>
+<p>删除 image 文件</p>
+<p>$ docker image rm [imageName]</p>
+</blockquote>
+<p><img src="https://gitee.com/zhoull0801/picture/raw/master/images/20210626112121.png" alt="image-20210626112115186"></p>
+<div align = "center">docker的另一种安装方式</div>
+
+<blockquote>
+<ol>
+<li><p>下载docker-ce的repo</p>
+<p>curl <a target="_blank" rel="noopener" href="https://download.docker.com/linux/centos/docker-ce.repo">https://download.docker.com/linux/centos/docker-ce.repo</a> -o /etc/yum.repos.d/docker-ce.repo</p>
+</li>
+<li><p>安装依赖</p>
+<p>yum install <a target="_blank" rel="noopener" href="https://download.docker.com/linux/fedora/30/x86_64/stable/Packages/containerd.io-1.2.6-3.3.fc30.x86_64.rpm">https://download.docker.com/linux/fedora/30/x86_64/stable/Packages/containerd.io-1.2.6-3.3.fc30.x86_64.rpm</a></p>
+</li>
+<li><p> 安装docker-ce</p>
+</li>
+</ol>
+<p>   dnf -y  install docker-ce  docker-ce-cli –nobest</p>
+<ol start="4">
+<li><p>启动 docker</p>
+<p>systemctl start docker</p>
+</li>
+<li><p>查看 docker 版本信息</p>
+<p>docker -v</p>
+</li>
+<li><p>设置开机自动启动</p>
+<p>systemctl enable –now docker</p>
+</li>
+</ol>
+</blockquote>
 
                 
             </div>
@@ -1214,7 +1336,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">8.2k</span>
+                        class="white-color">8.8k</span>
             
             
             
