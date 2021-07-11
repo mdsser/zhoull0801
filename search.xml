@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>计算机一级笔记</title>
+      <link href="/2021/07/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%80%E7%BA%A7%E7%AC%94%E8%AE%B0/"/>
+      <url>/2021/07/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%80%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、计算机的发展、类型及应用领域"><a href="#一、计算机的发展、类型及应用领域" class="headerlink" title="一、计算机的发展、类型及应用领域"></a>一、计算机的发展、类型及应用领域</h1><p>1、计算机的出现</p><p>​        1946年第一台电子计算机ENIAC(电子数字积分计算机)诞生于美国宾西法利亚大学。</p><p>2、冯·诺依曼计算机</p><p>​        分局冯·诺依曼的原理和思想，决定了计算机必须有输入、输出、存储器、运算器和控制器五个组成部分，提出”二进制”和”程序存储”的概念，冯·诺依曼也被誉为”现代电子计算机之父”</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机等级 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 考证 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>菜鸟入门Docker</title>
       <link href="/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/"/>
       <url>/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/</url>
@@ -22,7 +47,7 @@
             
             <tag> Typora </tag>
             
-            <tag> Markdown </tag>
+            <tag> Docker </tag>
             
         </tags>
       
@@ -355,66 +380,11 @@
     
     
     <entry>
-      <title>Network</title>
-      <link href="/Network/index.html"/>
-      <url>/Network/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>English</title>
       <link href="/English/index.html"/>
       <url>/English/index.html</url>
       
         <content type="html"><![CDATA[<p>url: C:\Hexo\source_posts\Linux</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
-      
-        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MySQL</title>
-      <link href="/project/index.html"/>
-      <url>/project/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -443,6 +413,72 @@
     
     
     <entry>
+      <title>Network</title>
+      <link href="/Network/index.html"/>
+      <url>/Network/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL</title>
+      <link href="/project/index.html"/>
+      <url>/project/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
+      
+        <content type="html"><![CDATA[<p>阿里云镜像站:<a href="https://developer.aliyun.com/special/mirrors/notice">阿里云镜像站</a></p><p>清华大学镜像站：<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>Strong博客：<a href="https://www.hanzz.red/">Strong-在线文档库</a></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>gallery</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
@@ -457,17 +493,6 @@
       <title>北极光</title>
       <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
       <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
