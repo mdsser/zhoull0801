@@ -402,9 +402,9 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>Linux</title>
+      <link href="/collection/index.html"/>
+      <url>/collection/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -413,9 +413,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -435,9 +435,31 @@
     
     
     <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>gallery</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL</title>
+      <link href="/project/index.html"/>
+      <url>/project/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -457,31 +479,9 @@
     
     
     <entry>
-      <title>Linux</title>
-      <link href="/collection/index.html"/>
-      <url>/collection/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MySQL</title>
-      <link href="/project/index.html"/>
-      <url>/project/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
