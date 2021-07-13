@@ -380,6 +380,17 @@
     
     
     <entry>
+      <title>Network</title>
+      <link href="/Network/index.html"/>
+      <url>/Network/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>English</title>
       <link href="/English/index.html"/>
       <url>/English/index.html</url>
@@ -391,9 +402,9 @@
     
     
     <entry>
-      <title>Network</title>
-      <link href="/Network/index.html"/>
-      <url>/Network/index.html</url>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -413,9 +424,9 @@
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>Linux</title>
+      <link href="/collection/index.html"/>
+      <url>/collection/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -435,17 +446,6 @@
     
     
     <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>friends</title>
       <link href="/friends/index.html"/>
       <url>/friends/index.html</url>
@@ -457,9 +457,9 @@
     
     
     <entry>
-      <title>Linux</title>
-      <link href="/collection/index.html"/>
-      <url>/collection/index.html</url>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
