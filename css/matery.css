@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #FF4500 35%, #00BFFF 60%);
+    background-image: linear-gradient(to right, #D87093 42%, #00BFFF 58%);
     opacity: 0.8;	//透明效果 值范围 0-1，看情况修改
 }
 
@@ -293,7 +293,7 @@ header nav .brand-span {
 header .brand-logo .logo-img {
     height: 45px;
     vertical-align: middle;
-    padding-bottom: 6px;
+    padding-bottom: 6;
 }
 
 header .brand-logo .logo-span {
@@ -577,7 +577,7 @@ header .go-back i {
 .bg-cover .title {
     font-size: 4rem;
     line-height: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     position: relative;
 }
 
@@ -975,7 +975,7 @@ article .article-tags .chip {
 }
 
 .paging {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .paging .row {
@@ -1835,7 +1835,7 @@ footer {
 }
 
 footer .social-statis {
-    margin-top: 10px;
+    margin-top: 1px;
     position: relative;
 }
 

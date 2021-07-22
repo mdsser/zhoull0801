@@ -690,7 +690,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"网络基础","value":2},{"name":"Linux","value":3},{"name":"MySQL","value":2},{"name":"Shell脚本","value":2},{"name":"励志语录","value":1},{"name":"英语","value":1},{"name":"Docker","value":1},{"name":"计算机等级","value":1},{"name":"H3CNE实验","value":1}],
+                data: [{"name":"网络基础","value":2},{"name":"MySQL","value":2},{"name":"Linux","value":3},{"name":"Shell脚本","value":2},{"name":"励志语录","value":1},{"name":"Docker","value":1},{"name":"英语","value":1},{"name":"计算机等级","value":1},{"name":"H3CNE实验","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -714,7 +714,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Linux","网络","MySQL","以太网","局域网","数据库","英语","短语","Typora","Docker"]
+                data: ["Linux","网络","MySQL","以太网","局域网","数据库","英语","Typora","Docker","短语"]
             }
         ],
         yAxis: [
@@ -915,14 +915,14 @@
             
             
             
-            <a href="/tags/Linux/">
-                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            <a href="/tags/MySQL/">
+                <span class="chip center-align waves-effect waves-light chip-default">MySQL</span>
             </a>
             
             
             
-            <a href="/tags/MySQL/">
-                <span class="chip center-align waves-effect waves-light chip-default">MySQL</span>
+            <a href="/tags/Linux/">
+                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
             </a>
             
             
@@ -939,12 +939,6 @@
             
             
             
-            <a href="/tags/%E7%9F%AD%E8%AF%AD/">
-                <span class="chip center-align waves-effect waves-light chip-default">短语</span>
-            </a>
-            
-            
-            
             <a href="/tags/Typora/">
                 <span class="chip center-align waves-effect waves-light chip-default">Typora</span>
             </a>
@@ -953,6 +947,12 @@
             
             <a href="/tags/Docker/">
                 <span class="chip center-align waves-effect waves-light chip-default">Docker</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%9F%AD%E8%AF%AD/">
+                <span class="chip center-align waves-effect waves-light chip-default">短语</span>
             </a>
             
             
@@ -1101,23 +1101,6 @@
 
 <div class="progress-bar"></div>
 
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-<script>
-    var now = new Date(); 
-    function createtime() { 
-        var grt= new Date("12/14/2019 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
-        now.setTime(now.getTime()+250); 
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-    } 
-setInterval("createtime()",250);
-</script>
 
 
     <!-- 搜索遮罩框 -->
