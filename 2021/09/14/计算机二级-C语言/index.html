@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ARP, C语言、Linux基础命令、Hexo、github、虚拟化">
+    <meta name="keywords" content="计算机二级-C语言, C语言、Linux基础命令、Hexo、github、虚拟化">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ARP | 周乐的博客</title>
+    <title>计算机二级-C语言 | 周乐的博客</title>
     <link rel="icon" type="image/jpeg" href="/%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -411,12 +411,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ARP</h1>
+                    <h1 class="description center-align post-title">计算机二级-C语言</h1>
                 </div>
             </div>
         </div>
@@ -532,16 +532,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">网络</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BB%A5%E5%A4%AA%E7%BD%91/">
-                                <span class="chip bg-color">以太网</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/">
-                                <span class="chip bg-color">局域网</span>
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
                             </a>
                         
                     </div>
@@ -552,8 +544,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                网络基础
+                            <a href="/categories/movies/" class="post-category">
+                                movies
+                            </a>
+                        
+                            <a href="/categories/movies/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" class="post-category">
+                                计算机二级
                             </a>
                         
                     </div>
@@ -565,21 +561,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-10
+                    2021-09-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-10
+                    2021-09-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    477
+                    1
                 </div>
                 
 
@@ -596,9 +592,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>什么是ARP？ARP作用和使用场景</strong></p>
-<hr>
-<p><strong>一、什么是ARP</strong><br>ARP是地址转换协议（Address Resolution Protocol）的英文缩写，它是一个链路层协议，工作在OSI 模型的第二层，在本层和硬件接口间进行联系，同时对上层（网络层）提供服务。我们知道二层的以太网交换设备并不能识别32位的IP地址，它们是以48位以太网地址（就是我们常说的MAC地址）传输以太网数据包的。也就是说IP数据包在局域网内部传输时并不是靠IP地址而是靠MAC地址来识别目标的，因此IP地址与MAC地址之间就必须存在一种对应关系，而ARP协议就是用来确定这种对应关系的协议。<br>ARP是地址解析协议，用于根据目的IP地址来解析MAC地址，进行二层通讯。<br><strong>二、工作原理</strong><br>工作原理是通过广播发送ARP查询请求目的IP的MAC地址，与发送方处于同一广播域的主机收到该请求后，如果确认查询的IP是本机，则单播回应本机的MAC地址；如果发现查询的IP不是本机，则不回应；发送方接收到ARP回应后，把该IP和MAC地址写入本机ARP缓存表，下次再与该IP进行二层通讯，则直接使用表中的记录来进行转发。<br><strong>三、ARP的使用场景</strong><br>1、如果目的IP和本机IP属于同一网段，则ARP请求查询的就是目的IP的MAC地址<br>2、如果目的IP和本机IP不属于同一网段，当本机存在到达目的IP的路由时，则ARP请求查询的就是该路由下一跳的MAC地址；如果没有明细路由，就请求查询缺省路由下一跳（也就是网关）的MAC地址。</p>
+                <p>111</p>
 
                 
             </div>
@@ -625,7 +619,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhoull0801.top/2021/06/10/ARP/">http://zhoull0801.top/2021/06/10/ARP/</a>
+                    <a href="http://zhoull0801.top/2021/09/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7-C%E8%AF%AD%E8%A8%80/">http://zhoull0801.top/2021/09/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7-C%E8%AF%AD%E8%A8%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -663,16 +657,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">网络</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BB%A5%E5%A4%AA%E7%BD%91/">
-                                    <span class="chip bg-color">以太网</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/">
-                                    <span class="chip bg-color">局域网</span>
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
                                 </a>
                             
                         </div>
@@ -1110,17 +1096,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/10/Linux/Linux%E4%B8%8B%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/">
+                <a href="/2021/09/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7-C%E8%AF%AD%E8%A8%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Linux下的压缩与解压缩命令">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机二级-C语言">
                         
-                        <span class="card-title">Linux下的压缩与解压缩命令</span>
+                        <span class="card-title">计算机二级-C语言</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1130,30 +1117,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/movies/" class="post-category">
+                                    movies
+                                </a>
+                            
+                            <a href="/categories/movies/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" class="post-category">
+                                    计算机二级
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">基础命令</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
                 </div>
@@ -1167,13 +1155,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/07/Linux/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
+                <a href="/2021/07/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%80%E7%BA%A7%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux基础命令">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="计算机一级笔记">
                         
-                        <span class="card-title">Linux基础命令</span>
+                        <span class="card-title">计算机一级笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1184,14 +1172,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AD%89%E7%BA%A7/" class="post-category">
+                                    计算机等级
                                 </a>
                             
                             
@@ -1201,8 +1189,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/%E8%80%83%E8%AF%81/">
+                        <span class="chip bg-color">考证</span>
                     </a>
                     
                 </div>
