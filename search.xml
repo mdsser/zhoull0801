@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>长津湖</title>
+      <link href="/2021/10/11/%E9%95%BF%E6%B4%A5%E6%B9%96/"/>
+      <url>/2021/10/11/%E9%95%BF%E6%B4%A5%E6%B9%96/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> favorite </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CMD命令大全</title>
       <link href="/2021/10/02/CMD%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
       <url>/2021/10/02/CMD%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</url>
@@ -439,6 +458,17 @@
     
     
     <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux</title>
       <link href="/collection/index.html"/>
       <url>/collection/index.html</url>
@@ -461,9 +491,9 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
+      <title>favorite</title>
+      <link href="/favorite/index.html"/>
+      <url>/favorite/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -475,17 +505,6 @@
       <title>contact</title>
       <link href="/contact/index.html"/>
       <url>/contact/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -516,6 +535,17 @@
     
     
     <entry>
+      <title>MySQL</title>
+      <link href="/project/index.html"/>
+      <url>/project/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
@@ -527,9 +557,9 @@
     
     
     <entry>
-      <title>MySQL</title>
-      <link href="/project/index.html"/>
-      <url>/project/index.html</url>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

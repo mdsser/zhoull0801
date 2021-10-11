@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTTPS 原理解析, C语言、Linux基础命令、Hexo、github、虚拟化">
+    <meta name="keywords" content="favorite, C语言、Linux基础命令、Hexo、github、虚拟化">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>HTTPS 原理解析 | 周乐的博客</title>
+    <title>favorite | 周乐的博客</title>
     <link rel="icon" type="image/jpeg" href="/%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -426,12 +426,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HTTPS 原理解析</h1>
+                    <h1 class="description center-align post-title">favorite</h1>
                 </div>
             </div>
         </div>
@@ -545,25 +545,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">网络</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                网络基础
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -572,21 +559,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-15
+                    2021-10-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-15
+                    2021-10-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    487
+                    0
                 </div>
                 
 
@@ -603,19 +590,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>HTTPS是在HTTP和TCP之间建立了一个安全层，HTTP与TCP通信的时候，必须先经过一个安全层，对数据包进行加密，然后将加密后的数据包传送给TCP，相应的TCP必&lt;须将数据包进行解密，才能传送给上面的HTTP。</p>
-<h3 id="一、基本概念及理解"><a href="#一、基本概念及理解" class="headerlink" title="一、基本概念及理解"></a><strong>一、基本概念及理解</strong></h3><p><font color='green'>TLS/SSL的功能实现主要依赖于三类基本算法</font></p>
-<p>散列函数 、对称加密和非对称加密，其利用非对称加密实现身份认证和密钥协商，对称加密算法采用协商的密钥对数据加密，基于散列函数验证信息的完整性。</p>
-<p>非对称加密是实现身份认证和密钥协商；</p>
-<p>对称加密是对信息进行加密；</p>
-<p><img src="C:\Users\86132\AppData\Roaming\Typora\typora-user-images\image-20210615094338143.png" alt="image-20210615094338143"></p>
-<p><font color='green'>SSL和TLS的区别？</font></p>
-<p>SSL和TLS都是加密协议，有网络请求的地方就可以使用这两种协议在传输层进行加密，确保数据传输的安全，**<code>SSL是TLS的前身</code>**，网景在1995年发布了直接发布了SSL 2.0版本，1.0版本没有对外发布。由于漏洞的原因，版本2.0也只是昙花一现，网景在1996年就发布了SSL3.0。随后在1999年的时候，基于SSL3.0版本，网景发布了TLS1.0版本(虽然TLS1.0在SSL3.0基础上的改动不太大，但是这些改动都是非常重要的)。</p>
-<p>**<code>我们现在应该使用TLS协议</code>**，因为在2011年和2015年的时候SSL2.0和SSL3.0就已经分别被弃用了，而且由于漏洞的缘故，如果你的服务器配置了SSL的协议，还得手动将他们禁用掉。所以我们只给服务器配置TLS协议就好了，有的服务对TLS版本有要求，你可以在SSL Server Test查看服务器的证书及协议等配置。</p>
-<p>SSL Server Test：</p>
-<p><a target="_blank" rel="noopener" href="https://globalsign.ssllabs.com/">https://globalsign.ssllabs.com/</a></p>
-<p>现在TLS主流版本是1.2。</p>
-
+                
                 
             </div>
             <hr/>
@@ -641,7 +616,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhoull0801.top/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/">http://zhoull0801.top/2021/06/15/HTTPS-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</a>
+                    <a href="http://zhoull0801.top/favorite/index.html">http://zhoull0801.top/favorite/index.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -678,11 +653,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">网络</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1118,66 +1089,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/15/Shell%E8%84%9A%E6%9C%AC-%E4%B8%8A/">
+                <a href="/favorite/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Shell脚本100例(上)">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="favorite">
                         
-                        <span class="card-title">Shell脚本100例(上)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-15
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Shell%E8%84%9A%E6%9C%AC/" class="post-category">
-                                    Shell脚本
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/06/13/%E8%8B%B1%E8%AF%AD%E7%9F%AD%E8%AF%AD/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="英语短语">
-                        
-                        <span class="card-title">英语短语</span>
+                        <span class="card-title">favorite</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1188,28 +1111,55 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
-                                    英语
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Aurora
                             
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%9F%AD%E8%AF%AD/">
-                        <span class="chip bg-color">短语</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/favorite/index.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="favorite">
+                        
+                        <span class="card-title">favorite</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Aurora
+                            
+                        </span>
+                    </div>
                 </div>
+
                 
             </div>
         </div>
