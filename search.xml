@@ -4,98 +4,6 @@
   
     
     <entry>
-      <title>长津湖</title>
-      <link href="/2021/10/11/%E9%95%BF%E6%B4%A5%E6%B9%96/"/>
-      <url>/2021/10/11/%E9%95%BF%E6%B4%A5%E6%B9%96/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> favorite </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CMD命令大全</title>
-      <link href="/2021/10/02/CMD%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
-      <url>/2021/10/02/CMD%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</url>
-      
-        <content type="html"><![CDATA[<p>1、netsh wlan show profile    name=”wifi名字” key=clear        查看所连接的wifi详细信息（wifi密码）</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 命令 </tag>
-            
-            <tag> cmd </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第一章 程序设计基础</title>
-      <link href="/2021/09/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7-C%E8%AF%AD%E8%A8%80/"/>
-      <url>/2021/09/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7-C%E8%AF%AD%E8%A8%80/</url>
-      
-        <content type="html"><![CDATA[<h4 id="程序的概念"><a href="#程序的概念" class="headerlink" title="程序的概念"></a><strong>程序的概念</strong></h4><p>程序是指令的集合</p><p>指令→编译→计算机运行</p><p>指令：编写的执行程序（要干什么的步骤）</p><p>编译：将程序转换成二进制（怎么干）</p><p>计算机运行：将二进制运行出结果</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> movies </category>
-          
-          <category> 计算机二级 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> C语言 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>计算机一级笔记</title>
-      <link href="/2021/07/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%80%E7%BA%A7%E7%AC%94%E8%AE%B0/"/>
-      <url>/2021/07/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%80%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="一、计算机的发展、类型及应用领域"><a href="#一、计算机的发展、类型及应用领域" class="headerlink" title="一、计算机的发展、类型及应用领域"></a>一、计算机的发展、类型及应用领域</h1><p>1、计算机的出现</p><p>​        1946年第一台电子计算机ENIAC(电子数字积分计算机)诞生于美国宾西法利亚大学。</p><p>2、冯·诺依曼计算机</p><p>​        分局冯·诺依曼的原理和思想，决定了计算机必须有输入、输出、存储器、运算器和控制器五个组成部分，提出”二进制”和”程序存储”的概念，冯·诺依曼也被誉为”现代电子计算机之父”</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机等级 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 考证 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>菜鸟入门Docker</title>
       <link href="/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/"/>
       <url>/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/</url>
@@ -429,19 +337,6 @@
     </entry>
     
     
-    
-    <entry>
-      <title>周乐的第一篇博客</title>
-      <link href="/2021/06/05/%E5%91%A8%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2021/06/05/%E5%91%A8%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
   
   
     
@@ -450,17 +345,6 @@
       <title>Network</title>
       <link href="/Network/index.html"/>
       <url>/Network/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -480,9 +364,9 @@
     
     
     <entry>
-      <title>Linux</title>
-      <link href="/collection/index.html"/>
-      <url>/collection/index.html</url>
+      <title>favorite</title>
+      <link href="/favorite/index.html"/>
+      <url>/favorite/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -502,6 +386,17 @@
     
     
     <entry>
+      <title>Linux</title>
+      <link href="/collection/index.html"/>
+      <url>/collection/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -513,31 +408,9 @@
     
     
     <entry>
-      <title>MySQL</title>
-      <link href="/project/index.html"/>
-      <url>/project/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>favorite</title>
-      <link href="/favorite/index.html"/>
-      <url>/favorite/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>contact</title>
+      <link href="/contact/index.html"/>
+      <url>/contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -557,9 +430,31 @@
     
     
     <entry>
+      <title>MySQL</title>
+      <link href="/project/index.html"/>
+      <url>/project/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>北极光</title>
       <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
       <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
