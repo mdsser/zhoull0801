@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>VC6断点调试技巧(第一篇)</title>
+      <link href="/2021/10/25/VC6%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7-%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
+      <url>/2021/10/25/VC6%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7-%E7%AC%AC%E4%B8%80%E7%AF%87/</url>
+      
+        <content type="html"><![CDATA[<p><strong>前言</strong></p><hr><p>这篇文章是VC6系列文章的第一篇，同时也是编译器的开篇，自从大学开设C语言这门课程以来，多数学校还是用的老版本的编译器，例如：Dev-C++，Visual C++。因此掌握编译器的调试技巧对自己编程能力和思维能力有一个很好的提升。</p><p><strong>正文</strong></p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> Visual C++ 6.0 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编译器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>菜鸟入门Docker</title>
       <link href="/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/"/>
       <url>/2021/06/24/%E8%8F%9C%E9%B8%9F%E5%85%A5%E9%97%A8Docker/</url>
@@ -301,11 +326,11 @@
       
         <tags>
             
+            <tag> 网络 </tag>
+            
             <tag> 以太网 </tag>
             
             <tag> 局域网 </tag>
-            
-            <tag> 网络 </tag>
             
         </tags>
       
@@ -342,6 +367,17 @@
     
     
     <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Network</title>
       <link href="/Network/index.html"/>
       <url>/Network/index.html</url>
@@ -356,17 +392,6 @@
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -408,9 +433,9 @@
     
     
     <entry>
-      <title>favorite</title>
-      <link href="/favorite/index.html"/>
-      <url>/favorite/index.html</url>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -419,9 +444,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>favorite</title>
+      <link href="/favorite/index.html"/>
+      <url>/favorite/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -441,9 +466,9 @@
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>MySQL</title>
+      <link href="/project/index.html"/>
+      <url>/project/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -452,9 +477,9 @@
     
     
     <entry>
-      <title>MySQL</title>
-      <link href="/project/index.html"/>
-      <url>/project/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
