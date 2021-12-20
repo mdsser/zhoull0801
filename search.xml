@@ -411,17 +411,6 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="/friends/index.html"/>
-      <url>/friends/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>contact</title>
       <link href="/contact/index.html"/>
       <url>/contact/index.html</url>
@@ -444,17 +433,6 @@
     
     
     <entry>
-      <title>MySQL</title>
-      <link href="/project/index.html"/>
-      <url>/project/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>gallery</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
@@ -466,9 +444,20 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL</title>
+      <link href="/project/index.html"/>
+      <url>/project/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -480,6 +469,17 @@
       <title>北极光</title>
       <link href="/%E5%8C%97%E6%9E%81%E5%85%89/index.html"/>
       <url>/%E5%8C%97%E6%9E%81%E5%85%89/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
